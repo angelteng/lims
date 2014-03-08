@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--修改任务信息</title>
+#parse("HeadPage.html")
+#if($SavePermission)
+<!--可选：表单输入验证-->
+<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.js"></script>
+<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.methods.js"></script> 
+#end
+<link rel="stylesheet" href="${HopeTag.InstallDir}Editor/themes/default/default.css" />
+<script charset="utf-8" src="${HopeTag.InstallDir}Editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="${HopeTag.InstallDir}Editor/lang/zh_CN.js"></script>
+<script>
+    var editor;
+    KindEditor.ready(function (K) {
+        editor = K.create('textarea[name="Detail"]', {
+            allowFileManager: true
+        });
+    });
+</script>
+<script charset="utf-8" src="${HopeTag.InstallDir}Scripts/DatePicker/WdatePicker.js"></script>
+<link rel="stylesheet" type="text/css" href="${HopeTag.InstallDir}Style/ymPrompt.css"/>
+<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/ymPrompt.js"></script>
+<link rel="stylesheet" type="text/css" href="${HopeTag.InstallDir}Scripts/zTree/css/zTreeStyle.css"/>
+<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/zTree/js/jquery.ztree.all-3.5.min.js"></script>
+</head>
+<body>
+<form id="frmInput" method="post">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmnamedle" wnameth="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}GroupTask">任务管理</a> >> 修改任务
+        </div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+            <dl>		
+                <dt>任务类型 </dt>
+                <dd>
+                    <select name="TypeID">
+                        #foreach($Item in ${HopeTag.GetTaskTypeList()})
+                        <option value="${Item.ID}" #if(${Item.ID}==${Entity.TypeID})selected="selected"#end>${Item.Name}</option>
+                        #end
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>任务名称  <span class="NeedEnter">*</span></dt>
+                <dd><input type="text" name="Name" id="txtName" class="normalinput required" value="${Entity.Name}"/></dd>
+            </dl>
+            <dl>		
+                <dt>优先级 </dt>
+                <dd>
+                    #foreach($Item in ${HopeTag.GetTaskPriorityListCN()})
+                    <input type="radio" #if($Item.Key==${Entity.Priority})checked="checked"#end name="Priority" value="${Item.Key}" /><label>${Item.Value}</label>
+                    #end
+                </dd>
+		    </dl>
+            <dl>
+                <dt>任务来源 </dt>
+                <dd><input type="text" name="Source" id="txtSource" class="normalinput" value="${Entity.Source}"/></dd>
+            </dl>
+            <dl>		
+                <dt>任务详情 </dt>
+                <dd>
+                    <textarea name="Detail" rows="3" id="txtDetail" cols="20" class="normalinput" style="width: 60%;height:400px;">${Entity.Detail}</textarea>
+                </dd>
+		    </dl>
+            <dl>		
+                <dt>进度 </dt>
+                <dd>
+                    #foreach($Item in ${HopeTag.GetProgressTypeListCN()})
+                    <input type="radio" #if($Item.Key==${Entity.Progress})checked="checked"#end name="Progress" value="${Item.Key}" /><label>${Item.Value}</label>
+                    #end
+                </dd>
+		    </dl>
+            <dl>
+                <dt>期限 </dt>
+                <dd><input type="text" name="Deadline" id="txtDeadline" class="normalinput Wdate" onClick="WdatePicker()" value="${Entity.Deadline}"/></dd>
+            </dl>
+            <dl>
+                <dt>任务跟进人员 </dt>
+                <dd>
+                    <textarea name="Task_Handler" id="txtTask_Handler" rows="3" cols="20" readonly="readonly" class="normalinput" style="width: 30%;height:50px;">#foreach($Item in ${Handlers})${HopeTag.GetUser($Item.HandlerID).Name},#end</textarea>
+                    <input type="button" class="ActionButton" onclick="showHandlerBox();" style="vertical-align: 10px;" value="添加"/>
+                </dd>
+            </dl>
+            <dl>
+                <dt>备注 </dt>
+                <dd>
+                    <textarea name="Remark" rows="3" cols="20" class="normalinput" style="width: 60%;height:100px;">${Entity.Remark}</textarea>
+                </dd>
+            </dl>
+		
+            <div class="btnArea">
+                #if($SavePermission)<input type="submit" class="ActionButton" value="保存"/>#end
+                <input type="button" class="ActionButton" onclick="window.history.back()" value="返回"/>
+            </div>
+        </div>
+    </div>
+    <!--End : 表格列表-->
+    </div>
+	<input type="hidden" value="$Entity.ID" name="ID" />
+  </form>
+  #if($SavePermission)
+    <script type="text/javascript">
+        function showHandlerBox() {
+            ymPrompt.win({ message: '<ul id="zTreehandler" class="ztree"></ul>', width: 400, height: 300, title: '选择人员', handler: btnHandler, btn: [['确定', 'yes'], ['取消', 'cancel']] });
+            var setting = {
+                async:{
+                    enable:true,
+                    url:"${HopeTag.InstallDir}User/Tree",
+                    autoParam:["id"],
+                },
+                check: {
+                    enable: true
+                },
+                data: {
+                    simpleData: {
+                        enable: true
+                    }
+                }
+            };
+            jQuery.fn.zTree.init(jQuery("#zTreehandler"), setting);
+        }
+        
+        function btnHandler(tp) {
+            if (tp == "yes") {
+                var zTree = jQuery.fn.zTree.getZTreeObj("zTreehandler");
+                var nodes = zTree.getCheckedNodes();
+                var handler = jQuery("#txtTask_Handler");
+                var txt = "";
+                for (var i = 0; i < nodes.length; i++) {
+                    var node = nodes[i];
+                    console.log(node);
+                    if (node.id.indexOf("g") != 0) {
+                        txt += node.name + ",";
+                    }
+                }
+                handler.text(txt);
+            }
+        }
+
+        jQuery(document).ready(function () {
+            jQuery("#frmInput").validate({
+                submitHandler: function () {
+                    var url = "${HopeTag.InstallDir}GroupTask/Save/";
+                    editor.sync();
+                    var pars = jQuery('#frmInput').serialize();
+                    var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionCompleteGo });
+                }
+            });
+        });
+    </script>
+  #end
+</body>
+</html>
+

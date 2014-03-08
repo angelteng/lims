@@ -1,0 +1,30 @@
+﻿#foreach($Field in $Project.CustomFields)
+#set($FieldValue = false)
+#if($Result) #set($FieldValue = ${HopeTag.GetFieldValue(${Field.Code},${Result.Collection})}) #end
+#if(!$FieldValue) #set($FieldValue = $Field.DefaultValue) #end
+#if($Field.NewLine && $velocityCount > 1) <br /> #end
+$Field.PrefixText
+
+#if($Field.InputType == "Radio")
+#foreach($Item in $Field.ListItems)
+   <input name="${Project.ID}_${Field.Code}" type="radio" disabled="disabled" style="margin-left:10px;" value="$Item.Key" #if($FieldValue == $Item.Key) checked #end />$Item.Value
+#end
+
+#elseif($Field.InputType == "CheckBox")
+#foreach($Item in $Field.ListItems)
+   <input name="${Project.ID}_${Field.Code}" type="checkbox" disabled="disabled" style="margin-left:10px;" value="$Item.Key" #if($FieldValue == $Item.Key) checked #end />$Item.Value
+#end
+
+#elseif($Field.InputType == "DropDownList")
+    <select name="${Project.ID}_${Field.Code}" disabled="disabled">
+#foreach($Item in $Field.ListItems)
+    <option value="$Item.Key" #if($FieldValue == $Item.Key) selected #end>$Item.Value</option>
+#end
+    </select>
+#elseif($Field.InputType == "File")
+    <span style="color:Blue;">上传附件，待处理</span>
+#else
+$FieldValue
+#end
+<p class="tips">$Field.SuffixText</p>
+#end

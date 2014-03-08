@@ -1,0 +1,165 @@
+----------log begin---------- 
+2013-10-24 18:20:55,430 [8] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-10-24 18:20:56,807 [10] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: SELECT this_.ID as ID15_0_, this_.OriginID as OriginID15_0_, this_.Receiver as Receiver15_0_, this_.Title as Title15_0_, this_.Details as Details15_0_, this_.Status as Status15_0_, this_.ReadTime as ReadTime15_0_, this_.Creator as Creator15_0_, this_.CreatTime as CreatTime15_0_ FROM Sys_Message this_ WHERE this_.Receiver = @p0 and this_.Status=@p1 ORDER BY this_.CreatTime desc 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'OriginID' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:da0b2306-2411-4d71-8b06-92182c5b8b65
+
+2013-10-24 18:20:56,964 [10] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-24 18:20:56,968 [10] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-24 18:20:56,969 [10] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+----------log begin---------- 
+2013-10-24 19:42:16,402 [6] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 19:44:16,740 [6] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 19:45:04,708 [10] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 19:46:47,601 [13] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 20:00:52,463 [19] ERROR NHibernate.Cfg.Configuration 
+ - Problem parsing configuration 
+NHibernate.Cfg.HibernateConfigException: An exception occurred during configuration of persistence layer. ---> System.IO.DirectoryNotFoundException: 未能找到路径“D:\Work\DotNet\Project\MvcBase\Src\MvcWeb\App_Data\Mapping\nhibernate.xml”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlTextReaderImpl.OpenUrlDelegate(Object xmlResolver)
+   在 System.Threading.CompressedStack.runTryCode(Object userData)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.CompressedStack.Run(CompressedStack compressedStack, ContextCallback callback, Object state)
+   在 System.Xml.XmlTextReaderImpl.OpenUrl()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlCharCheckingReader.Read()
+   在 System.Xml.XsdValidatingReader.Read()
+   在 System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
+   在 System.Xml.XPath.XPathDocument..ctor(XmlReader reader)
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 46
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 57
+   在 NHibernate.Cfg.Configuration.Configure(XmlReader textReader) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\Configuration.cs:行号 1539
+
+2013-10-24 20:00:52,533 [19] ERROR Log4NetHope.LogBase 
+ - An exception occurred during configuration of persistence layer. 
+
+2013-10-24 20:00:52,533 [19] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 20:07:53,443 [18] ERROR NHibernate.Cfg.Configuration 
+ - Problem parsing configuration 
+NHibernate.Cfg.HibernateConfigException: An exception occurred during configuration of persistence layer. ---> System.IO.DirectoryNotFoundException: 未能找到路径“D:\Work\DotNet\Project\MvcBase\Src\MvcWeb\App_Data\Mapping\nhibernate.xml”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlTextReaderImpl.OpenUrlDelegate(Object xmlResolver)
+   在 System.Threading.CompressedStack.runTryCode(Object userData)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.CompressedStack.Run(CompressedStack compressedStack, ContextCallback callback, Object state)
+   在 System.Xml.XmlTextReaderImpl.OpenUrl()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlCharCheckingReader.Read()
+   在 System.Xml.XsdValidatingReader.Read()
+   在 System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
+   在 System.Xml.XPath.XPathDocument..ctor(XmlReader reader)
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 46
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 57
+   在 NHibernate.Cfg.Configuration.Configure(XmlReader textReader) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\Configuration.cs:行号 1539
+
+2013-10-24 20:07:53,457 [18] ERROR Log4NetHope.LogBase 
+ - An exception occurred during configuration of persistence layer. 
+
+2013-10-24 20:07:53,457 [18] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- ----------log end---------- ----------log begin---------- 
+2013-10-24 20:09:55,636 [14] ERROR NHibernate.Cfg.Configuration 
+ - Problem parsing configuration 
+NHibernate.Cfg.HibernateConfigException: An exception occurred during configuration of persistence layer. ---> System.IO.DirectoryNotFoundException: 未能找到路径“D:\Work\DotNet\Project\MvcBase\Src\MvcWeb\App_Data\Mapping\nhibernate.xml”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlTextReaderImpl.OpenUrlDelegate(Object xmlResolver)
+   在 System.Threading.CompressedStack.runTryCode(Object userData)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.CompressedStack.Run(CompressedStack compressedStack, ContextCallback callback, Object state)
+   在 System.Xml.XmlTextReaderImpl.OpenUrl()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlCharCheckingReader.Read()
+   在 System.Xml.XsdValidatingReader.Read()
+   在 System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
+   在 System.Xml.XPath.XPathDocument..ctor(XmlReader reader)
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 46
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 57
+   在 NHibernate.Cfg.Configuration.Configure(XmlReader textReader) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\Configuration.cs:行号 1539
+
+2013-10-24 20:09:55,800 [14] ERROR Log4NetHope.LogBase 
+ - An exception occurred during configuration of persistence layer. 
+
+2013-10-24 20:09:55,800 [14] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 20:11:29,934 [15] ERROR NHibernate.Cfg.Configuration 
+ - Problem parsing configuration 
+NHibernate.Cfg.HibernateConfigException: An exception occurred during configuration of persistence layer. ---> System.IO.DirectoryNotFoundException: 未能找到路径“D:\Work\DotNet\Project\MvcBase\Src\MvcWeb\App_Data\Mapping\nhibernate.xml”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlTextReaderImpl.OpenUrlDelegate(Object xmlResolver)
+   在 System.Threading.CompressedStack.runTryCode(Object userData)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.CompressedStack.Run(CompressedStack compressedStack, ContextCallback callback, Object state)
+   在 System.Xml.XmlTextReaderImpl.OpenUrl()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlCharCheckingReader.Read()
+   在 System.Xml.XsdValidatingReader.Read()
+   在 System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
+   在 System.Xml.XPath.XPathDocument..ctor(XmlReader reader)
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 46
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:行号 57
+   在 NHibernate.Cfg.Configuration.Configure(XmlReader textReader) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\Configuration.cs:行号 1539
+
+2013-10-24 20:11:29,979 [15] ERROR Log4NetHope.LogBase 
+ - An exception occurred during configuration of persistence layer. 
+
+2013-10-24 20:11:29,979 [15] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 20:13:36,339 [23] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-10-24 20:21:38,808 [29] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- 

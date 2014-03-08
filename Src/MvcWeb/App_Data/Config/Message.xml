@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang>
+  <cn>
+    <property code="common_000">请填写必填字段</property>
+    <property code="common_001">无权写入</property>
+
+    <property code="front_user_000">Email地址已被注册</property>
+    <property code="front_user_001">用户组不存在</property>
+
+  </cn>
+  <en>
+    <property code="common_000">Some Field is Required</property>
+    <property code="common_001">No Permission</property>
+    
+    <property code="front_user_000">Email Address is Registed!</property>
+  </en>
+</lang>

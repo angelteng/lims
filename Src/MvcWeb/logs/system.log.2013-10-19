@@ -1,0 +1,123 @@
+----------log begin---------- 
+2013-10-19 01:23:19,599 [15] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-10-19 01:23:24,162 [7] ERROR Log4NetHope.LogBase 
+ - 对路径“D:\Work\DotNet\Project\CIMS\Src\MvcWeb\App_Data\config\SiteConfigData.xml”的访问被拒绝。 
+----------log end---------- ----------log begin---------- 
+2013-10-19 01:23:34,120 [15] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-10-19 01:23:34,582 [6] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: SELECT this_.ID as ID15_0_, this_.OriginID as OriginID15_0_, this_.Receiver as Receiver15_0_, this_.Title as Title15_0_, this_.Details as Details15_0_, this_.Status as Status15_0_, this_.ReadTime as ReadTime15_0_, this_.Creator as Creator15_0_, this_.CreatTime as CreatTime15_0_ FROM Sys_Message this_ WHERE this_.Receiver = @p0 and this_.Status=@p1 ORDER BY this_.CreatTime desc 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'OriginID' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+
+2013-10-19 01:23:34,623 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:23:34,627 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:23:34,628 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:23:42,197 [12] ERROR Log4NetHope.LogBase 
+ - 对路径“D:\Work\DotNet\Project\CIMS\Src\MvcWeb\App_Data\config\SiteConfigData.xml”的访问被拒绝。 
+----------log end---------- ----------log begin---------- 
+2013-10-19 01:24:59,556 [5] ERROR Log4NetHope.LogBase 
+ - 对路径“D:\Work\DotNet\Project\CIMS\Src\MvcWeb\App_Data\config\SiteConfigData.xml”的访问被拒绝。 
+----------log end---------- ----------log begin---------- 
+2013-10-19 01:25:13,772 [5] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-10-19 01:25:14,243 [6] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: SELECT this_.ID as ID15_0_, this_.OriginID as OriginID15_0_, this_.Receiver as Receiver15_0_, this_.Title as Title15_0_, this_.Details as Details15_0_, this_.Status as Status15_0_, this_.ReadTime as ReadTime15_0_, this_.Creator as Creator15_0_, this_.CreatTime as CreatTime15_0_ FROM Sys_Message this_ WHERE this_.Receiver = @p0 and this_.Status=@p1 ORDER BY this_.CreatTime desc 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'OriginID' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+
+2013-10-19 01:25:14,271 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:25:14,275 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:25:14,276 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:26:36,467 [12] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: SELECT this_.ID as ID15_0_, this_.OriginID as OriginID15_0_, this_.Receiver as Receiver15_0_, this_.Title as Title15_0_, this_.Details as Details15_0_, this_.Status as Status15_0_, this_.ReadTime as ReadTime15_0_, this_.Creator as Creator15_0_, this_.CreatTime as CreatTime15_0_ FROM Sys_Message this_ WHERE this_.Receiver = @p0 and this_.Status<>@p1 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'OriginID' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+
+2013-10-19 01:26:36,467 [12] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:26:36,467 [12] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:26:36,467 [12] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:26:39,307 [6] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: SELECT this_.ID as ID15_0_, this_.OriginID as OriginID15_0_, this_.Receiver as Receiver15_0_, this_.Title as Title15_0_, this_.Details as Details15_0_, this_.Status as Status15_0_, this_.ReadTime as ReadTime15_0_, this_.Creator as Creator15_0_, this_.CreatTime as CreatTime15_0_ FROM Sys_Message this_ WHERE this_.Creator = @p0 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'OriginID' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+
+2013-10-19 01:26:39,307 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:26:39,307 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+
+2013-10-19 01:26:39,307 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'OriginID' 无效。 
+----------log end---------- 

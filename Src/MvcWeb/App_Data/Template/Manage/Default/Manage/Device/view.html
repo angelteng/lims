@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--仪器查看</title>
+#parse("HeadPage.html")
+</head>
+<body>
+ <div id="wrap">
+
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+	#if($SavePermission)
+	 	<div class="r">
+	        <ul>
+		        <li><a href="${HopeTag.InstallDir}Device/Modify/$Entity.ID"><img src="${HopeTag.InstallDir}Images/Icon/edit.png" align="absmiddle" width="14" height="14" /></a><a href="${HopeTag.InstallDir}Device/Modify/$Entity.ID">&nbsp;编辑</a>
+		        </li>
+	        </ul>
+        </div>
+	#end
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--> <a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}Device">仪器管理</a> >> 查看仪器               
+        </div>
+	 </div>
+    <!--End : 顶部导航-->
+    
+    <!--Begin : 表格列表-->
+    <div class="m">
+      <div class="contentInfo">
+        <dl>
+            <dt></dt>
+            <dd>${Entity.ID}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Name}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.CNName}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.TestContent}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Pic}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Video}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.DeviceModel}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Supplier}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.SupplierURL}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Number}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Price}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Status}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.OrderNum}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.PersonInCharge}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Contact}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Information}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.BeginTime.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.EndTime.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.MaxApplyTIme}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.MaxPreApplyTIme}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Location}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Remark}</dd>
+        </dl>
+     </div>
+        
+     <div class="btnArea">
+        <input type="button" class="ActionButton" onclick="window.parent.history.back()" value="返回"/>
+     </div>   
+	
+     </div>
+    <!--End : 表格列表-->
+  </div>
+</body>
+</html>
+

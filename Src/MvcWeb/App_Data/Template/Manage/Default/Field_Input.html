@@ -1,0 +1,29 @@
+﻿#foreach($Field in $Project.CustomFields)
+#set($FieldValue = false)
+#if($Result) #set($FieldValue = ${HopeTag.GetFieldValue(${Field.Code},${Result.Collection})}) #end
+#if(!$FieldValue) #set($FieldValue = $Field.DefaultValue) #end
+#if($Field.NewLine && $velocityCount > 1) <br /> #end
+$Field.PrefixText
+#if($Field.InputType == "TextArea")
+<textarea name="${Project.ID}_${Field.Code}" #if(${Field.InputWidth} != "") style="width:${Field.InputWidth};" #end>$FieldValue</textarea>
+#elseif($Field.InputType == "Radio")
+#foreach($Item in $Field.ListItems)
+<input name="${Project.ID}_${Field.Code}" id="${Project.ID}_${Field.Code}_${Item.Key}" type="radio" value="$Item.Key" #if($FieldValue == $Item.Key)checked="checked"#end /><label for="${Project.ID}_${Field.Code}_${Item.Key}" style="margin-right:10px;">$Item.Value</label>
+#end
+#elseif($Field.InputType == "CheckBox")
+#foreach($Item in $Field.ListItems)
+<input name="${Project.ID}_${Field.Code}" id="${Project.ID}_${Field.Code}_${Item.Key}" type="checkbox" value="$Item.Key" #if($FieldValue == $Item.Key)checked="checked"#end /><label for="${Project.ID}_${Field.Code}_${Item.Key}" style="margin-right:10px;">$Item.Value</label>
+#end
+#elseif($Field.InputType == "DropDownList")
+<select name="${Project.ID}_${Field.Code}">
+#foreach($Item in $Field.ListItems)
+<option value="$Item.Key" #if($FieldValue == $Item.Key) selected #end>$Item.Value</option>
+#end
+</select>
+#elseif($Field.InputType == "File")
+<span style="color:Blue;">上传附件，待处理</span>
+#else
+<input name="${Project.ID}_${Field.Code}" type="text" class="normalinput" #if(${Field.DataType}=="DateTime")onclick="SelectDate(this,'yyyy-MM-dd');"#end value="$FieldValue" #if(${Field.InputWidth} != "") style="width:${Field.InputWidth};" #end />
+#end
+<p class="tips">$Field.SuffixText</p>
+#end

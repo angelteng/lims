@@ -1,0 +1,652 @@
+﻿
+<html>
+<head runat="server">
+    <title>${HopeTag.SiteName} >> 模块管理</title>
+    #parse("HeadPage.html")
+    <link rel="stylesheet" type="text/css" href="${HopeTag.InstallDir}Style/dhtmlXTree.css" />			    
+	<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/dhtmlXTree.js"></script>
+    <link rel="stylesheet" type="text/css" href="${HopeTag.InstallDir}Style/ymPrompt.css"/>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/ymPrompt.js"></script>
+    <style type="text/css">
+    table.tree
+    {
+    	margin-top:10px;
+    	width:100%;
+    }
+    table.tree tr th
+    {
+        height:30px;
+	    background:#eee;
+    }
+    table.tree tr td div
+    {
+        padding:10px 0;
+    }
+    a
+    {
+        color:#666;
+        text-decoration:none;
+    }
+    a:hover
+    {
+        color:#000;
+    }
+    .myContent{
+        padding:20px;
+        display:block;
+    }
+    .myContent div
+    {
+        margin:5px 0;
+    }
+    .myContent label.innerhtml_name
+    {
+        width:80px;
+    }
+    .myContent input.innerhtml_input
+    {
+        border:none;
+        border-bottom:solid 1px #666;
+        width:300px;
+        background:transparent;
+    }
+    .myContent textarea.innerhtml_textarea
+    {
+        border:solid 1px #666;
+    }
+    .lnkImg
+    {
+        cursor:pointer;
+    }
+    .btn
+    {
+        background:url(${HopeTag.InstallDir}Images/Message/btn_bg.gif);
+        border:none;
+        width:80px;
+        height:21px;
+        cursor:pointer;
+        margin:10px auto;
+    }
+    .must
+    {
+        color:red;
+    }
+    .preview
+    {
+        padding:10px;
+        line-height:30px;
+    }
+    .preview lable
+    {
+        margin:10px 0;
+    }
+    </style>	
+	<script type="text/javascript" language="javascript">
+
+	    function handler() { }
+
+	    /***************************************************************************************************
+	    *
+	    * 模块管理 包含 添加模块、添加子模块、修改模块、删除模块
+	    *
+	    ****************************************************************************************************/
+
+
+	    //
+	    //通用回调函数,添加模块/添加子模块/编辑模块均会调用此方法
+	    //
+	    function callback(f) {
+	        if (!CheckInput()) return;
+
+	        // 显示进度条
+	        $('#progress_bar').css("display","block");
+
+	        $('#lblModuleName')[0].innerHTML = $F('txtModuleName');
+	        f();
+	    }
+
+	    //
+	    //弹出框的HTML
+	    //
+	    var innerhtml = '<div id="messagebox" class=\'myContent\'>';
+	    var innerhtml2 = '';
+	    var callbackfunc = '';
+	    innerhtml = innerhtml + '<div><label class="innerhtml_name">模块名称：</label><input type="text" value="" id="txtModuleName" class="innerhtml_input" /><span class="must">*</span></div>';
+	    innerhtml = innerhtml + '<div><label class="innerhtml_name">首页URL：</label><input type="text" value="" width="300" id="txtDefaultUrl" class="innerhtml_input" />&nbsp;<font color="red">以~/开始并以/结束</font></div>';
+	    innerhtml = innerhtml + '<div><label class="innerhtml_name">备注：</label><textarea cols="50" rows="8" id="txtRemark" class="innerhtml_textarea"></textarea></div>';
+	    innerhtml = innerhtml + '<div><label class="innerhtml_name">是否可用：</label><input type="checkbox" checked id="checkIsActive" /></div>';
+	    innerhtml = innerhtml + '<div><label class="innerhtml_name">父Id：</label><input type="text" value="0" width="300" id="txtParentId" class="innerhtml_input" /></div>';
+	    innerhtml = innerhtml + '<div><label class="innerhtml_name">&nbsp;</label><input class="btn" type="button" value="保存" onclick="';
+	    innerhtml2 = '" /></div>';
+	    innerhtml2 = innerhtml2 + '<div id="progress_bar" style="display:none;"><label class="innerhtml_name">&nbsp;</label><img src="${HopeTag.InstallDir}Images/Message/status_anim.gif" /></div>';
+	    innerhtml2 = innerhtml2 + '<div><label class="innerhtml_name">&nbsp;</label><span class="must" id="error_text"></span></div>';
+	    var innertitle = '';
+
+	    //添加模块
+	    function addModule() {
+	        innertitle = '添加模块';
+	        callbackfunc = 'callbackAddModule()';
+	        var inner = innerhtml + callbackfunc + innerhtml2;
+	        ymPrompt.win(inner, 600, 350, innertitle);
+	    }
+	    function callbackAddModule() {
+	        callback(AddTreeNode);
+	    }
+	    //添加子模块
+	    function addChildModule() {
+	        if (!CheckSelect()) return;
+
+	        innertitle = '添加子模块';
+	        callbackfunc = 'callbackAddChildModule()';
+	        inner = innerhtml + callbackfunc + innerhtml2;
+	        ymPrompt.win(inner, 600, 350, innertitle);
+
+	        // 赋值
+	        $('#txtParentId')[0].value = tree.getSelectedItemId();
+	    }
+	    function callbackAddChildModule() {
+	        callback(AddChildTreeNode);
+	    }
+
+	    //修改模块
+	    function editModule() {
+	        if (!CheckSelect()) return;
+
+	        innertitle = '修改模块';
+	        callbackfunc = 'callbackEditModule()';
+	        inner = innerhtml + callbackfunc + innerhtml2;
+	        ymPrompt.win(inner, 600, 350, innertitle);
+
+	        //赋值
+	        $('#txtModuleName')[0].value = $("#lblModuleName")[0].innerHTML;
+	        $('#txtDefaultUrl')[0].value = $("#lblDefaultUrl")[0].innerHTML;
+	        $('#txtRemark')[0].value = $("#lblRemark")[0].innerHTML;
+	        $('#checkIsActive')[0].checked = $("#lblIsActive")[0].innerHTML == "True";
+	        $('#txtParentId')[0].value = $F("hiParentId");
+	    }
+	    function callbackEditModule() {
+	        callback(EditTreeNode);
+	    }
+
+	    //删除模块
+	    function deleteModule() {
+	        if (!CheckSelect()) return;
+	        DeleteTreeNode();
+	        //	    if(!DeleteTreeNode()) ymPrompt.alert({message:'删除失败',slideShowHide:false,title:'系统模块',handler:handler});
+	    }
+
+	    /***************************************************************************************************
+	    *
+	    * 功能管理 包含 添加功能、修改功能、删除功能
+	    *
+	    ****************************************************************************************************/
+
+	    //
+	    //通用回调函数,添加模块/添加子模块/编辑模块均会调用此方法
+	    //
+	    function callbackf(f) {
+	        if (!CheckInputf()) return;
+
+	        // 显示进度条
+	        $('#progress_bar').css("display", "block");
+
+	        f();
+	    }
+
+	    //
+	    //弹出框的HTML
+	    //
+	    var innerhtmlf = '<div id="messagebox" class=\'myContent\'>';
+	    var innerhtmlf2 = '';
+	    var callbackfuncf = '';
+	    innerhtmlf = innerhtmlf + '<div><label class="innerhtml_name">功能名称：</label><input type="text" value="" id="txtFunctionName" class="innerhtml_input" /><span class="must">*</span></div>';
+	    innerhtmlf = innerhtmlf + '<div><label class="innerhtml_name">默认URL：</label><input type="text" value="" width="300" id="txtFunctionDefaultUrl" class="innerhtml_input" />&nbsp;<font color="red">以~/开始并以/结束</font></div>';
+	    innerhtmlf = innerhtmlf + '<div><label class="innerhtml_name">标识：</label><input type="text" value="" width="300" id="txtFunctionKey" class="innerhtml_input" /></div>';
+	    innerhtmlf = innerhtmlf + '<div><label class="innerhtml_name">值：</label><input type="text" value="" width="300" id="txtFunctionValue" class="innerhtml_input" /></div>';
+	    innerhtmlf = innerhtmlf + '<div><label class="innerhtml_name">备注：</label><textarea cols="50" rows="8" id="txtFunctionRemark" class="innerhtml_textarea"></textarea></div>';
+	    innerhtmlf = innerhtmlf + '<div><label class="innerhtml_name">后台页面：</label><input type="checkbox" checked id="checkAdminPage" /></div>';
+	    innerhtmlf = innerhtmlf + '<div><label class="innerhtml_name">&nbsp;</label><input class="btn" type="button" value="保存" onclick="';
+	    innerhtmlf2 = '" /></div>';
+	    innerhtmlf2 = innerhtmlf2 + '<div id="progress_barf" style="display:none;"><label class="innerhtml_name">&nbsp;</label><img src="${HopeTag.InstallDir}Images/Message/status_anim.gif" /></div>';
+	    innerhtmlf2 = innerhtmlf2 + '<div><label class="innerhtml_name">&nbsp;</label><span class="must" id="error_textf"></span></div>';
+	    var innertitlef = '';
+
+	    //添加功能
+	    function addFunction() {
+	        innertitlef = '添加功能';
+	        callbackfuncf = 'callbackAddFunction()';
+	        var innerf = innerhtmlf + callbackfuncf + innerhtmlf2;
+	        ymPrompt.win(innerf, 600, 400, innertitlef);
+	    }
+	    function callbackAddFunction() {
+	        callbackf(AddFunctionTreeNode);
+	    }
+
+	    //修改功能
+	    function editFunction() {
+	        if (!CheckSelectf()) return;
+
+	        innertitle = '修改模块';
+	        callbackfuncf = 'callbackEditFunction()';
+	        innerf = innerhtmlf + callbackfuncf + innerhtmlf2;
+	        ymPrompt.win(innerf, 600, 400, innertitlef);
+
+	        //赋值
+	        $('#txtFunctionName')[0].value = $("#lblFunctionName")[0].innerHTML;
+	        $('#txtFunctionDefaultUrl')[0].value = $("#lblFunctionDefaultUrl")[0].innerHTML;
+	        $('#txtFunctionKey')[0].value = $("#lblFunctionKey")[0].innerHTML;
+	        $('#txtFunctionValue')[0].value = $("#lblFunctionValue")[0].innerHTML;
+	        $('#txtFunctionRemark')[0].value = $("#lblFunctionRemark")[0].innerHTML;
+	        $('#checkAdminPage')[0].checked = $("#lblAdminPage")[0].innerHTML == "True";
+	    }
+	    function callbackEditFunction() {
+	        callbackf(EditFunctionTreeNode);
+	    }
+
+	    //删除模块
+	    function deleteFunction() {
+	        if (!CheckSelectf()) return;
+	        DeleteFunctionTreeNode();
+	    }
+
+	    //重新生成文件
+	    function GenerateModule() {
+	        var url = "${HopeTag.InstallDir}module/Generate";
+	        var pars = "";
+	        var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionComplete });
+	    }
+	
+	</script>	    
+</head>
+<body style="overflow-x:hidden;">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="r">
+			        <ul>
+				        <li>
+				            <img src="${HopeTag.InstallDir}Images/Icon/chart_organisation_add.png" onclick="GenerateModule()" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;<a href="javascript:GenerateModule();">重新生成模块信息</a>
+				        </li>				        					        
+			        </ul>
+		        </div>
+		<div class="l">
+		    <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+		    <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> 模块配置           
+		</div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">        
+      <table class="tree" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <th width="300">模块</th>
+            <th width="300">功能</th>
+            <th>说明</th>
+        </tr>
+        <tr>
+            <td>
+                <div style="font-size:12px">
+                <img src="${HopeTag.InstallDir}Images/Admin/0011.gif" alt="添加模块" title="添加模块" class="lnkImg" onclick="addModule();" />&nbsp;&nbsp;<a href="javascript:addModule();">添加模块</a>
+                <img src="${HopeTag.InstallDir}Images/Admin/22.gif" alt="添加子模块" title="添加子模块" class="lnkImg" onclick="addChildModule();" />&nbsp;&nbsp;<a href="javascript:addChildModule();">添加子模块</a>
+                <br />
+                <img src="${HopeTag.InstallDir}Images/Admin/33.gif" alt="修改模块" title="修改模块" class="lnkImg" onclick="editModule();" />&nbsp;&nbsp;<a href="javascript:editModule();">修改模块</a>
+                <img src="${HopeTag.InstallDir}Images/Admin/11.gif" alt="删除模块" title="删除模块" class="lnkImg" onclick="deleteModule();" />&nbsp;&nbsp;<a href="javascript:deleteModule();">删除模块</a>
+                </div>
+            </td>
+            <td>
+                <div style="font-size:12px">
+                <img src="${HopeTag.InstallDir}Images/Admin/0011.gif" alt="添加功能" title="添加功能" class="lnkImg" onclick="addFunction();" />&nbsp;&nbsp;<a href="javascript:addFunction();">添加功能</a>
+                <img src="${HopeTag.InstallDir}Images/Admin/33.gif" alt="修改功能" title="修改功能" class="lnkImg" onclick="editFunction();" />&nbsp;&nbsp;<a href="javascript:editFunction();">修改功能</a>
+                <br />
+                <img src="${HopeTag.InstallDir}Images/Admin/11.gif" alt="删除功能" title="删除功能" class="lnkImg" onclick="deleteFunction();" />&nbsp;&nbsp;<a href="javascript:deleteFunction();">删除功能</a>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+          <td valign="top" id="moduleTreeBox" height="100%" style="width:300px; background-color:#f5f5f5;border :1px solid Silver; overflow:auto;"></td>
+          <td valign="top" id="functionTreeBox" height="100%" style="width:300px; background-color:#f5f5f5;border :1px solid Silver; overflow:auto;"></td>
+          <td valign="top" class="preview" height="100%">
+            <input type="hidden" value="" id="hiParentId" />
+            <input type="hidden" value="" id="hiModuleName" />
+            <strong>模块信息：</strong><br />
+            模块ID：<label id="lblModuleId"></label><br />
+            模块名称：<label id="lblModuleName"></label><br />
+            父ID：<label id="lblParentId"></label><br />
+            默认URL：<label id="lblDefaultUrl"></label><br />
+            备注：<label id="lblRemark"></label><br />
+            是否可用：<label id="lblIsActive"></label><br />
+            <br />
+            <strong>功能信息：</strong><br />
+            <input type="hidden" value="" id="hiFunctionId" />
+            模块ID：<label id="lblFunctionModuleId"></label><br />
+            功能名称：<label id="lblFunctionName"></label><br />
+            功能ID：<label id="lblFunctionId"></label><br />
+            功能Key：<label id="lblFunctionKey"></label><br />
+            功能Value：<label id="lblFunctionValue"></label><br />
+            是否管理页面：<label id="lblAdminPage"></label><br />
+            默认URL：<label id="lblFunctionDefaultUrl"></label><br />
+            备注：<label id="lblFunctionRemark"></label><br />
+            
+          </td>
+        </tr>
+      </table>
+	<!--End : 表格列表-->
+<!-- 创建树的时候一定要放在创建容器的后面 不然会提示找不到this.parentObject对象 -->
+<!-- 根节点为0的话会报错，没找是什么原因 -->
+<script type="text/javascript" language="JavaScript">
+    tree = new dhtmlXTreeObject("moduleTreeBox", "100%", "100%", 0);
+    tree.setImagePath("${HopeTag.InstallDir}Images/TreeImgs/");
+    tree.loadXML("${HopeTag.InstallDir}module/GetModuleTreeXMLWithoutFunction?TempID=" + Math.random());
+    tree.setOnClickHandler(tonclick);
+
+    function fixImage(id) {
+        switch (tree.getLevel(id)) {
+            case 1:
+                tree.setItemImage2(id, 'books_close.gif', 'tombs.gif', 'tombs.gif');
+                break;
+            case 2:
+                tree.setItemImage2(id, 'book.gif', 'books_open.gif', 'books_close.gif');
+                break;
+            case 3:
+                tree.setItemImage2(id, 'book.gif', 'books_open.gif', 'book.gif');
+                break;
+            default:
+                tree.setItemImage2(id, 'book_titel.gif', 'book_titel.gif', 'book_titel.gif');
+                break;
+        }
+    }
+
+    function tonclick(id) {
+        if (tree.getParmText(id, 'nodetype') == "1")    // nodetype 表示树的类型,1:"模块", 2:"功能"
+        {
+            $("#hiParentId")[0].value = tree.getParmText(id, 'data2');
+            setModuleLabel(
+			        tree.getItemText(id),
+			        tree.getSelectedItemId(),
+			        tree.getParmText(id, 'data2'),
+			        tree.getParmText(id, 'data3'),
+			        tree.getParmText(id, 'data4'),
+			        tree.getParmText(id, 'data5')
+			    )
+
+            //加载Function 树
+            loadFunctionTree(tree.getSelectedItemId());
+        }
+    };
+
+    // 设置模块Label
+    function setModuleLabel(name, id, pid, url, remark, active) {
+        $("#lblModuleName")[0].innerHTML = name;
+        $("#lblModuleId")[0].innerHTML = id;
+        $("#lblParentId")[0].innerHTML = pid;
+        $("#lblDefaultUrl")[0].innerHTML = url;
+        $("#lblRemark")[0].innerHTML = remark;
+        $("#lblIsActive")[0].innerHTML = active;
+    }
+
+    //检查是否已选中
+    function CheckSelect() {
+        if ($F("hiParentId") == "") {
+            alert("请先选择模块");
+            return false;
+        }
+
+        return true;
+    }
+
+    //检查是否填写功能名称
+    function CheckInput() {
+
+        if ($F("txtModuleName") == "") {
+            $('#error_text')[0].innerHTML = "模块名称不能为空！";
+            return false;
+        }
+        $('#error_text')[0].innerHTML = "";
+
+        return true;
+    }
+
+    //添加同级节点
+    function AddTreeNode() {
+
+        //如果选中的是根节点root的话， ParentID为0
+        if (tree.getSelectedItemId() == "0") {
+            $("#hiParentId")[0].value = "0";
+        }
+        else {
+            //其它节点的话用选择节点父节点
+            pID = tree.getParentId(tree.getSelectedItemId());
+            $("#hiParentId")[0].value = pID;
+        }
+
+        if (CheckInput()) {
+            if (tree.getSelectedItemId() == "0") {
+                alert("请在<系统模块>根节点上添加子模块");
+                return false;
+            }
+            else {
+                return SaveModuleInfo(1);
+            }
+        }
+    }
+
+    function AddChildTreeNode() {
+        if (tree.getSelectedItemId() == "0") {
+            $("#hiParentId")[0].value = "0";
+        }
+        else {
+            $("#hiParentId")[0].value = tree.getSelectedItemId();
+        }
+
+        if (CheckInput()) {
+            SaveModuleInfo(2);
+        }
+    }
+
+    function EditTreeNode() {
+        if (tree.getSelectedItemId() == "0") {
+            alert("不能修改<系统模块>");
+            return;
+        }
+        else {
+            SaveModuleInfo(3);
+        }
+    }
+
+    function DeleteTreeNode() {
+
+        if (tree.getSelectedItemId() == "0") {
+            alert("不能删除<系统模块>");
+            return;
+        }
+        else {
+            handlerDelete(window.confirm("确认删除当前模块？"));
+        }
+    }
+
+    function handlerDelete(tp) {
+        if (tp) {
+            SaveModuleInfo(4);
+        }
+    }
+
+    //------ 1：添加节点；2：添加子节点；3：修改节点；4：删除；
+    function SaveModuleInfo(iAction) {
+        var url = "${HopeTag.InstallDir}module/Save";
+        var pars = "";
+        if (iAction == 4)
+            pars = "ModuleID=" + tree.getSelectedItemId() + "&Action=" + iAction;
+        else
+            pars = "ModuleID=" + tree.getSelectedItemId() + "&ParentID=" + $F("txtParentId") + "&ModuleName=" + $F("txtModuleName") + "&DefaultUrl=" + $F("txtDefaultUrl") + "&Remark=" + $F("txtRemark") + "&IsActive=" + $("#checkIsActive").is(':checked') + "&Action=" + iAction;
+        //var myAjax = new Ajax.Request(url, { method: 'post', parameters: pars, onComplete: SaveComplete });
+        var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: SaveComplete }); 
+    }
+
+    // 保存完成后执行更新XML树
+    function SaveComplete(xhrObj) {
+        var message = jQuery.evalJSON(xhrObj.responseText);
+        var result = message.Succeed;
+        var iAction = message.Remark;
+        alert(message.Text); 	// 显示提示信息
+
+        if (iAction == 4) {           // 如果是删除动作，则只需刷新XML树，而不需要清除弹出层
+            if (!result) {
+                return false;
+            }
+            else {
+                tree.deleteChildItems("0");
+                tree.loadXML("${HopeTag.InstallDir}/module/GetModuleTreeXMLWithoutFunction?TempID=" + Math.random());
+                tree2.deleteChildItems("0");
+                return true;
+            }
+        }
+        else {                       // 需要清除弹出层级刷新XML树
+            $('#progress_bar').css("display", "none");       // 隐藏进度条		    
+            ymPrompt.close();               // 关闭弹出窗口	
+            if (!result) {
+                $('#error_text')[0].innerHTML = "保存失败！";
+                return false;
+            }
+            else {
+                tree.deleteChildItems("0");
+                tree.loadXML("${HopeTag.InstallDir}/module/GetModuleTreeXMLWithoutFunction?TempID=" + Math.random());
+                return true;
+            }
+        }
+    }
+    //////////////////////////////////////     功能树   /////////////////////////////////////////////////////////////////////
+
+    tree2 = new dhtmlXTreeObject("functionTreeBox", "100%", "100%", 0);
+    tree2.setImagePath("${HopeTag.InstallDir}Images/TreeImgs/");
+
+    //tree2.loadXML("../Function/GetFunctionTreeXML.aspx");	
+    //tree2.loadXML("../Function/FunctionTree.xml");	
+
+    function loadFunctionTree(moduleId) {
+        tree2.deleteChildItems("0");
+        tree2.loadXML("${HopeTag.InstallDir}/Function/GetFunctionTreeXMLWithoutModule?ModuleId=" + moduleId + "&TempID=" + Math.random());
+        tree2.setImagePath("${HopeTag.InstallDir}Images/TreeImgs/");
+        tree2.setOnClickHandler(tonclick2);
+    }
+
+    // 设置点击事件
+    function tonclick2(id) {
+
+        $('#hiFunctionId')[0].value = tree2.getSelectedItemId();     // 可用来判断是否选中节点
+
+        if (tree2.getParmText(id, 'nodetype') == "2")              // nodetype 表示树的类型,1:"模块", 2:"功能"
+        {
+            setFunctionLabel(
+		        tree2.getItemText(id),
+		        tree2.getSelectedItemId(),
+		        tree2.getParmText(id, 'data1'),
+		        tree2.getParmText(id, 'data2'),
+		        tree2.getParmText(id, 'data3'),
+		        tree2.getParmText(id, 'data4'),
+		        tree2.getParmText(id, 'data5'),
+		        tree2.getParmText(id, 'data6')
+		    )
+            if ($("#lblModuleId")[0].innerHTML != $("#lblFunctionModuleId")[0].innerHTML)
+                setModuleLabel("", "", "", "", "", "");
+        }
+    };
+
+    //设置功能Label
+    function setFunctionLabel(name, id, key, mid, url, remark, functionValue, isAdminPage) {
+        $("#lblFunctionName")[0].innerHTML = name;
+        $("#lblFunctionId")[0].innerHTML = id;
+        $("#lblFunctionKey")[0].innerHTML = key;
+        $("#lblFunctionModuleId")[0].innerHTML = mid;
+        $("#lblFunctionDefaultUrl")[0].innerHTML = url;
+        $("#lblFunctionRemark")[0].innerHTML = remark;
+        $("#lblFunctionValue")[0].innerHTML = functionValue;
+        $("#lblAdminPage")[0].innerHTML = isAdminPage;
+    }
+
+    //检查是否已选中
+    function CheckSelectf() {
+        if ($F("hiFunctionId") == "") {
+            alert("请先选择功能")
+            return false;
+        }
+        return true;
+    }
+
+    //检查是否填写功能名称
+    function CheckInputf() {
+        if ($F("txtFunctionName") == "") {
+            $('#error_textf')[0].innerHTML = "功能名称不能为空！";
+            return false;
+        }
+        $('#error_textf')[0].innerHTML = "";
+        return true;
+    }
+
+    function AddFunctionTreeNode() {
+        return SaveFunctionInfo(1);
+    }
+
+    function EditFunctionTreeNode() {
+        return SaveFunctionInfo(3);
+    }
+
+    function DeleteFunctionTreeNode() {
+        handlerDelete2(window.confirm("确认删除所选功能？"));
+    }
+
+    function handlerDelete2(tp) {
+        if (tp) {
+            SaveFunctionInfo(4);
+        }
+    }
+
+    //------ 1：添加节点；2：添加子节点；3：修改节点；4：删除；
+    function SaveFunctionInfo(iAction) {
+        var url = "${HopeTag.InstallDir}Function/Save";
+        var pars = "";
+        if (iAction == 4)
+            pars = "ModuleID=" + tree.getSelectedItemId() + "&FunctionId=" + tree2.getSelectedItemId() + "&Action=" + iAction;
+        else
+            pars = "FunctionId=" + tree2.getSelectedItemId() + "&ModuleID=" + tree.getSelectedItemId() + "&FunctionName=" + $F("txtFunctionName") + "&DefaultUrl=" + $F("txtFunctionDefaultUrl") + "&FunctionKey=" + $F("txtFunctionKey") + "&Value=" + $F("txtFunctionValue") + "&AdminPage=" + $("#checkAdminPage").is(':checked') + "&Remark=" + $F("txtFunctionRemark") + "&Action=" + iAction;
+        //var myAjax = new Ajax.Request(url, { method: 'post', parameters: pars, onComplete: SaveComplete2 });
+        var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: SaveComplete2 });
+    }
+
+    // 保存完成后执行更新XML树
+    function SaveComplete2(xhrObj) {
+        var message = jQuery.evalJSON(xhrObj.responseText);
+        var result = message.Succeed;
+        var iAction = message.Remark;
+        alert(message.Text); 	// 显示提示信息
+
+        if (iAction == 4) {           // 如果是删除动作，则只需刷新XML树，而不需要清除弹出层
+
+            if (!result) {
+                return false;
+            }
+            else {
+                tree2.deleteChildItems("0");
+                tree2.loadXML("${HopeTag.InstallDir}Function/GetFunctionTreeXMLWithoutModule?ModuleId=" + tree.getSelectedItemId()+"&TempID=" + Math.random());                return true;
+            }
+        }
+        else {                       // 需要清除弹出层级刷新XML树
+
+            $('#progress_barf').css("display", "none");       // 隐藏进度条		
+            ymPrompt.close();               // 关闭弹出窗口	
+            if (!result) {
+                $('#error_text')[0].innerHTML = "保存失败！";
+                return false;
+            }
+            else {
+                tree2.deleteChildItems("0");
+                tree2.loadXML("${HopeTag.InstallDir}Function/GetFunctionTreeXMLWithoutModule?ModuleId=" + tree.getSelectedItemId()+"&TempID=" + Math.random());
+                return true;
+            }
+        }
+    }
+</script>   
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72EA3796-520E-40D7-A56B-080F7344B4B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hope.ITMS.DAL</RootNamespace>
+    <AssemblyName>Hope.ITMS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.0.3001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\NHibernate3.3\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDAL.cs" />
+    <Compile Include="Class\CommonFieldDAL.cs" />
+    <Compile Include="Class\CommonModelDAL.cs" />
+    <Compile Include="Class\DevDeviceDAL.cs" />
+    <Compile Include="Class\DevReservationDAL.cs" />
+    <Compile Include="Class\OrgGroupDAL.cs" />
+    <Compile Include="Class\OrgUserDAL.cs" />
+    <Compile Include="Class\SysRoleDAL.cs" />
+    <Compile Include="Class\SysAdminDAL.cs" />
+    <Compile Include="Class\SysFunctionDAL.cs" />
+    <Compile Include="Class\SysLogDAL.cs" />
+    <Compile Include="Class\SysModuleDAL.cs" />
+    <Compile Include="Class\SysPermissionDAL.cs" />
+    <Compile Include="Class\SysTagDAL.cs" />
+    <Compile Include="Class\TaskTaskDAL.cs" />
+    <Compile Include="Class\TaskTaskHandlerDAL.cs" />
+    <Compile Include="Class\TaskTaskTypeDAL.cs" />
+    <Compile Include="Class\UsrUserDAL.cs" />
+    <Compile Include="DALFactory.cs" />
+    <Compile Include="NHibernateHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\CustomXmlProxy.cs" />
+    <Compile Include="Proxy\SystemIdProxy.cs" />
+    <Compile Include="Proxy\XmlDocumentProxy.cs" />
+    <Compile Include="Proxy\DictionaryProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Virtual\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{BF0670CD-6FE3-495D-BE02-E4191DA80759}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{8B424FC7-6502-478D-99DC-F9185A287530}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBase\WebBase.csproj">
+      <Project>{97AEE3BB-DE1D-415F-9D0D-64ED33C7A177}</Project>
+      <Name>WebBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

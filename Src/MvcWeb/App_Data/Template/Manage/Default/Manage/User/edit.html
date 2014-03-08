@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--修改用户信息</title>
+#parse("HeadPage.html")
+#if($SavePermission)
+    <!--可选：表单输入验证-->
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.methods.js"></script> 
+#end
+</head>
+<body>
+<form id="frmInput" method="post">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmnamedle" wnameth="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}User">用户管理</a> >> 修改用户
+        </div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="GroupID" id="txtGroupID" class="normalinput" value="${Entity.GroupID}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Account" id="txtAccount" class="normalinput" value="${Entity.Account}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Password" id="txtPassword" class="normalinput required chrnum" value="${Entity.Password}"/></dd>
+		</dl>
+        <dl>
+            <dt>  <span class="NeedEnter">*</span></dt>
+            <dd><input type="text" name="Name" id="txtName" class="normalinput required" value="${Entity.Name}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Gender" id="txtGender" class="normalinput" value="${Entity.Gender}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Status" id="txtStatus" class="normalinput" value="${Entity.Status}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Birthday" id="txtBirthday" class="normalinput" value="${Entity.Birthday}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="RegDate" id="txtRegDate" class="normalinput" value="${Entity.RegDate}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="PhoneNo" id="txtPhoneNo" class="normalinput phone" value="${Entity.PhoneNo}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="FaxNo" id="txtFaxNo" class="normalinput" value="${Entity.FaxNo}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="MobileNo" id="txtMobileNo" class="normalinput Mobile" value="${Entity.MobileNo}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Email" id="txtEmail" class="normalinput email" value="${Entity.Email}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="HomeSite" id="txtHomeSite" class="normalinput" value="${Entity.HomeSite}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Postcode" id="txtPostcode" class="normalinput" value="${Entity.Postcode}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Address" id="txtAddress" class="normalinput" value="${Entity.Address}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="LoginTIme" id="txtLoginTIme" class="normalinput" value="${Entity.LoginTIme}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="LastLoginTime" id="txtLastLoginTime" class="normalinput" value="${Entity.LastLoginTime}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><textarea name="Remark" rows="3" cols="20" class="normalinput" style="width: 60%;height:100px;">${Entity.Remark}</textarea></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="CreateTime" id="txtCreateTime" class="normalinput" value="${Entity.CreateTime}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="LastUpdateTime" id="txtLastUpdateTime" class="normalinput" value="${Entity.LastUpdateTime}"/></dd>
+		</dl>
+		
+		<div class="btnArea">
+			#if($SavePermission)<input type="submit" class="ActionButton" value="保存"/>#end
+			<input type="button" class="ActionButton" onclick="window.history.back()" value="返回"/>
+		</div>
+	</div>
+    </div>
+    <!--End : 表格列表-->
+    </div>
+	<input type="hidden" value="$Entity.ID" name="ID" />
+  </form>
+  #if($SavePermission)
+  <script type="text/javascript">
+      jQuery(document).ready(function () {
+          jQuery("#frmInput").validate({
+              submitHandler: function () {
+                  var url = "${HopeTag.InstallDir}User/Save/";
+                  var pars = jQuery('#frmInput').serialize();
+                  var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionCompleteGo });
+              }
+          });
+      });
+  </script>
+  #end
+</body>
+</html>
+

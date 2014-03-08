@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--新增管理员</title>
+#parse("HeadPage.html")
+#if($SavePermission)
+    <!--可选：表单输入验证-->
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.methods.js"></script> 
+#end
+</head>
+<body>
+<form id="frmInput" method="post">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmnamedle" wnameth="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}Admin">管理员管理</a> >> 新增管理员
+        </div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+        <dl>		
+            <dt>角色ID </dt>
+            <dd><input type="text" name="RoleID" id="txtRoleID" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>登录名称  <span class="NeedEnter">*</span></dt>
+            <dd><input type="text" name="Name" id="txtName" class="normalinput required"/></dd>
+		</dl>
+        <dl>		
+            <dt>登录密码，加密 </dt>
+            <dd><input type="text" name="Password" id="txtPassword" class="normalinput required chrnum"/></dd>
+		</dl>
+        <dl>		
+            <dt>真实姓名 </dt>
+            <dd><input type="text" name="RealName" id="txtRealName" class="normalinput required"/></dd>
+		</dl>
+        <dl>		
+            <dt>状态 1-正常 -1-禁用 </dt>
+            <dd><input type="text" name="Status" id="txtStatus" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>联系电话 </dt>
+            <dd><input type="text" name="PhoneNo" id="txtPhoneNo" class="normalinput phone"/></dd>
+		</dl>
+        <dl>		
+            <dt>电子邮箱 </dt>
+            <dd><input type="text" name="Email" id="txtEmail" class="normalinput email"/></dd>
+		</dl>
+        <dl>		
+            <dt>登录次数 </dt>
+            <dd><input type="text" name="LoginTimes" id="txtLoginTimes" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>上次登录时间 </dt>
+            <dd><input type="text" name="LastLoginTime" id="txtLastLoginTime" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>登录失败次数 </dt>
+            <dd><input type="text" name="ErrorTimes" id="txtErrorTimes" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>上次登录失败时间 </dt>
+            <dd><input type="text" name="LastErrorTime" id="txtLastErrorTime" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>备注 </dt>
+            <dd><textarea name="Remark" rows="3" cols="20" class="normalinput" style="width: 60%;height:100px;"></textarea></dd>
+		</dl>
+		
+		<div class="btnArea">
+			#if($SavePermission)<input type="submit" class="ActionButton" value="保存"/>#end
+			<input type="button" class="ActionButton" onclick="window.history.back()" value="返回"/>
+		</div>
+	</div>
+    </div>
+    <!--End : 表格列表-->
+    </div>
+  </form>
+  #if($SavePermission)
+  <script type="text/javascript">
+      jQuery(document).ready(function () {
+          jQuery("#frmInput").validate({
+              submitHandler: function () {
+                  var url = "${HopeTag.InstallDir}Admin/Save/";
+                  var pars = jQuery('#frmInput').serialize();
+                  var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionCompleteGo });
+              }
+          });
+      });
+  </script>
+  #end
+</body>
+</html>
+

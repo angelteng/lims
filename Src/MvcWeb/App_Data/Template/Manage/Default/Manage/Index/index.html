@@ -1,0 +1,58 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>${HopeTag.SiteName}</title>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}/Scripts/jquery-1.4.4.min.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}/Scripts/Common.js"></script>
+    <link rel="stylesheet" type="text/css" href="${HopeTag.InstallDir}/Style/Admin.css" />
+    
+    <script type="text/javascript" language="javascript">
+        installDir="${HopeTag.InstallDir}";        
+        function autoHeight() {
+            var iframe = document.getElementById('main');
+            iframe.height = (document.body.clientHeight - 160) + "px";  //165为top+Nav+Bottom高度
+        }
+        $(window).resize(function() {
+            autoHeight();
+        });
+        function HideTips() {
+            $("#topAlertTips").fadeOut(3500);  //消息提示隐藏
+        }
+    </script>
+</head>
+<body style="overflow:hidden;" onload="autoHeight()">
+<!--Top Begin -->
+<div id="banner">
+    <h3>
+        <!--<img src="${HopeTag.InstallDir}${HopeTag.SiteLogo}" alt="${HopeTag.SiteName}" />-->　　　　　　　　
+    </h3>
+    <div id="baner_R">
+        <ul>
+            <li onclick="Home();"><img src="${HopeTag.InstallDir}/Images/Admin/Top_R_home.gif" alt="" />管理首页</li>
+            <li onclick="EditPwd();"><img src="${HopeTag.InstallDir}/Images/Admin/Top_R_Pwd.gif" alt="" />个人资料</li>
+            <li onclick="Logout();"><img src="${HopeTag.InstallDir}/Images/Admin/Top_R_Exit.gif" alt="" />退出系统</li>
+        </ul>
+        <div class="loginInfo"></div>
+    </div>
+</div>
+<!--Top Over-->
+<!--Nav Begin -->
+<div id="Nav">
+	<ul>
+        <li>首页</li>
+        <li>中心介绍</li>
+        <li>新闻消息</li>
+        <li><a href="${HopeTag.InstallDir}Device/UserList">仪器信息</a></li>
+        <li><a href="${HopeTag.InstallDir}Device/UserList">仪器预约</a></li>
+        <li>帮助中心</li>
+    </ul>
+</div>
+<!--Nav Over-->
+<!--Main Begin -->
+<!--<iframe id="main" name="main" frameborder="0" scrolling="auto" width="100%" src="${HopeTag.InstallDir}/Index/main"></iframe>-->
+<!--Main Over-->
+<!--Bottom Begin -->
+<div id="bottom">${HopeTag.SiteCopyright}<span>系统版本:${HopeTag.SysVersion}&nbsp;&nbsp;<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}/Scripts/timestamp.js"></script></span></div>
+<!--Bottom Over-->
+<div id="topAlertTips"></div>
+</body>
+</html>

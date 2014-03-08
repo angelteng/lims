@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--新增用户组</title>
+#parse("HeadPage.html")
+#if($SavePermission)
+    <!--可选：表单输入验证-->
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.methods.js"></script> 
+#end
+</head>
+<body>
+<form id="frmInput" method="post">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmnamedle" wnameth="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}Group">用户组管理</a> >> 新增用户组
+        </div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+        <dl>		
+            <dt>用户组名称  <span class="NeedEnter">*</span></dt>
+            <dd><input type="text" name="Name" id="txtName" class="normalinput required"/></dd>
+		</dl>
+        <dl>		
+            <dt>用户模型 </dt>
+            <dd>
+                 <select name="ModelID">
+                    #foreach($Item in ${HopeTag.GetUserModelList()})
+                    <option value="${Item.ID}">${Item.Name}</option>
+                    #end
+                </select>
+            </dd>
+		</dl>
+        <dl>		
+            <dt>排序号</dt>
+            <dd><input type="text" name="OrderID" id="txtOrderID" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>备注说明 </dt>
+            <dd><textarea name="Remark" rows="3" cols="20" class="normalinput" style="width: 60%;height:100px;"></textarea></dd>
+		</dl>
+		
+		<div class="btnArea">
+			#if($SavePermission)<input type="submit" class="ActionButton" value="保存"/>#end
+			<input type="button" class="ActionButton" onclick="window.history.back()" value="返回"/>
+		</div>
+	</div>
+    </div>
+    <!--End : 表格列表-->
+    </div>
+  </form>
+  #if($SavePermission)
+  <script type="text/javascript">
+      jQuery(document).ready(function () {
+          jQuery("#frmInput").validate({
+              submitHandler: function () {
+                  var url = "${HopeTag.InstallDir}Group/Save/";
+                  var pars = jQuery('#frmInput').serialize();
+                  var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionCompleteGo });
+              }
+          });
+      });
+  </script>
+  #end
+</body>
+</html>
+

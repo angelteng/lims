@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+    <bytecode-provider type="null"/>
+    <!-- Important under Medium Trust -->
+    <session-factory>
+        <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider, NHibernate</property>
+        <!--<property name="connection.connection_string">Persist Security Info=False;User ID=sa;Password=456;Initial Catalog=Hrs;Server=(local)</property>-->
+        <property name="dialect">NHibernate.Dialect.MsSql2005Dialect</property>
+        <property name="current_session_context_class">managed_web</property>
+    </session-factory>
+
+</hibernate-configuration>

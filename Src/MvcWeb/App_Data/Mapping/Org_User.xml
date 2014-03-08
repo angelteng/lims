@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Hope.ITMS.Model" assembly="Hope.ITMS.Model" auto-import="false">
+    <class name="OrgUser" table="Org_User">
+        <id name="ID" type="Int32">
+            <column name="ID" sql-type="int" />
+            <generator class="native"/>
+        </id>
+        <property name="GroupID" column="GroupID" type="Int32"/>
+        <property name="Name" column="Name" type="string"/>
+        <property name="FirstName" column="FirstName" type="string"/>
+        <property name="LastName" column="LastName" type="string"/>
+        <property name="Gender" column="Gender" type="Int32"/>
+        <property name="Email" column="Email" type="string"/>
+        <property name="Password" column="Password" type="string"/>
+        <property name="RegTime" column="RegTime" type="DateTime"/>
+        <property name="LoginTimes" column="LoginTimes" type="Int32"/>
+        <property name="LastLoginTime" column="LastLoginTime" type="DateTime"/>
+        <property name="ErrorTimes" column="ErrorTimes" type="Int32"/>
+        <property name="LastErrorTime" column="LastErrorTime" type="DateTime"/>
+        <property name="Status" column="Status" type="Int32"/>
+        <property name="Extend">
+            <column name="Extend" sql-type="xml" not-null="true" />
+            <type name="Hope.ITMS.DAL.DictionaryProxy,Hope.ITMS.DAL"/>
+        </property>
+        <property name="Remark" column="Remark" type="string"/>
+    </class>
+</hibernate-mapping>

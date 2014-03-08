@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<regionalData>
+  <language name="zh-cn">
+    <homePage>首页</homePage>
+    <currentLocation>您所在的位置：</currentLocation>
+    <articleText>正文</articleText>
+    <articleBookmark>收藏</articleBookmark>
+    <articlePrint>打印</articlePrint>
+    <articleClose>关闭窗口</articleClose>
+    <commentView>查看评论</commentView>
+    <commentTitle>我要评论：</commentTitle>
+    <commentPost>写好了</commentPost>
+    <searchFieldTips>请选择搜索字段</searchFieldTips>    
+    <searchTitle>搜索</searchTitle>
+    <searchPage>搜索结果页</searchPage>
+    <searchBarTitle>标题</searchBarTitle>
+    <searchBarInputer>录入者</searchBarInputer>
+    <searchNodeTips>请选择搜索类型</searchNodeTips>    
+    <searchBarAllNodes>所有栏目</searchBarAllNodes>    
+    <searchBarIncChildren>包括子栏目</searchBarIncChildren>
+    <searchBarBlur>模糊查询</searchBarBlur>
+    <searchKeywordTips>请选择搜索关键字</searchKeywordTips>
+    <searchBarGoToPage>转到页</searchBarGoToPage>
+    <pagerPreArticle>上一</pagerPreArticle>
+    <pagerNextArticle>下一</pagerNextArticle>
+    <pagerNoArticle>没有了</pagerNoArticle>
+    <pagerPrePage>前页</pagerPrePage>
+    <pagerNextPage>后页</pagerNextPage>
+    <pagerFirstPage>首页</pagerFirstPage>
+    <pagerLastPage>尾页</pagerLastPage>
+    <pagerTotalPage>共{1}条记录</pagerTotalPage>
+    <pagerCurrentPage>第{2}/{3}页</pagerCurrentPage>
+    <pagerDisplayedPage>该页显示{4}条</pagerDisplayedPage>
+    <userAccount>用户名</userAccount>
+    <userPassword>密码</userPassword>
+    <userForgetPassword>忘记密码?</userForgetPassword>
+    <userLogin>登录</userLogin>
+    <userLogout>注销</userLogout>
+    <userRegister>注册</userRegister>
+    <userCenter>用户中心</userCenter>
+    <verification>验证码</verification>
+    <refresh>刷新</refresh>
+  </language>
+  <language name="en-us">
+    <homePage>Home</homePage>
+    <currentLocation>Location：</currentLocation>
+    <articleText>Article</articleText>
+    <articleBookmark>Bookmark</articleBookmark>
+    <articlePrint>Print</articlePrint>
+    <articleClose>Close</articleClose>
+    <commentView>Comments</commentView>
+    <commentTitle>Comment</commentTitle>
+    <commentPost>Post</commentPost>
+    <searchFieldTips>Please select search field</searchFieldTips>
+    <searchTitle>Search</searchTitle>
+    <searchPage>Search Page</searchPage>
+    <searchBarTitle>Title</searchBarTitle>
+    <searchBarInputer>Input</searchBarInputer>
+    <searchNodeTips>Please select search node</searchNodeTips>
+    <searchBarAllNodes>All Nodes</searchBarAllNodes>
+    <searchBarIncChildren>Include SubNodes</searchBarIncChildren>
+    <searchBarBlur>Blur</searchBarBlur>
+    <searchKeywordTips>Please enter keyword</searchKeywordTips>
+    <searchBarGoToPage>Go To Page </searchBarGoToPage>
+    <pagerPreArticle>Previous</pagerPreArticle>
+    <pagerNextArticle>Next</pagerNextArticle>
+    <pagerNoArticle>No Article</pagerNoArticle>
+    <pagerPrePage>Previous Page</pagerPrePage>
+    <pagerNextPage>Next Page</pagerNextPage>
+    <pagerFirstPage>First Page</pagerFirstPage>
+    <pagerLastPage>Last Page</pagerLastPage>
+    <pagerTotalPage>Total {1} Records</pagerTotalPage>
+    <pagerCurrentPage>Page {2}/{3} </pagerCurrentPage>
+    <pagerDisplayedPage>{4}Records/Page</pagerDisplayedPage>
+    <userAccount>Account</userAccount>
+    <userPassword>Password</userPassword>
+    <userForgetPassword>Forget Password?</userForgetPassword>
+    <userLogin>Sign In</userLogin>
+    <userLogout>Sign Out</userLogout>
+    <userRegister>Join</userRegister>
+    <userCenter>User Center</userCenter>
+    <verifyCode>Verify Code</verifyCode>
+    <refresh>Refresh</refresh>
+  </language>
+</regionalData>

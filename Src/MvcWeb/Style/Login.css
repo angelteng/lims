@@ -1,0 +1,237 @@
+﻿/* CSS Document */
+
+/*
+Author:wensaint
+E-mail:wensaint@126.com
+Date:2011-08-22  
+*/
+
+/* ret all styles*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*reset over*/
+
+/*Background style*/
+body
+{	
+	background:#005d9d;
+	font-size:14px;
+	line-height:1.5;
+}
+#wrap
+{
+	width:100%;
+	height:100%;
+}
+
+/*container position style*/
+#container
+{
+	position:absolute;
+	height:478px;
+	width:688px;
+	top:50%;
+	left:50%;
+	margin-top:-250px;
+	margin-left:-354px;
+}
+
+/*logo style*/
+#container .logo
+{
+	background:url(../images/Login/login_Logo.jpg) no-repeat;
+	width:506px;
+	height:96px;
+	margin-left:100px;
+	margin-bottom:3px;
+}
+
+/*left bubbles*/
+#container .frm .l
+{
+	background:url(../images/Login/Login_bubble_L.jpg) no-repeat;
+	width:99px;
+	height:407px;
+	float:left;
+}
+
+/*middle info area style*/
+#container .frm .m
+{
+	width:500px;
+	height:406px;
+	float:left;
+}
+
+/*right bubbles*/
+#container .frm .r
+{
+	background:url(../images/Login/Login_Bubble_R.jpg) no-repeat;
+	width:88px;
+	height:406px;
+	float:left;
+}
+
+/*main info area style*/
+#container .frm .m .mainArea
+{
+	height:356px;	
+}
+#container .frm .m .mainArea .main_l
+{
+	background:url(../images/Login/Login_L.jpg) no-repeat;
+	width:168px;
+	height:100%;
+	float:left;
+}
+#container .frm .m .mainArea .main_l .helpInfo
+{
+	padding:8px;
+	padding-right:0;
+	padding-top:300px;
+	font-size:12px;
+	line-height:1.8;
+}
+#container .frm .m .mainArea .main_l .helpInfo h4
+{
+	font-size:14px;
+	color:#082355;
+	font-weight:bold;
+}
+#container .frm .m .mainBottom
+{
+	background:url(../images/Login/Login_B.jpg) no-repeat;
+	height:50px;
+}
+
+/*form area style*/
+#container .frm .m .mainArea .main_r
+{	
+	background:white;
+	width:332px;
+	height:100%;
+	float:right;	
+	position:relative;
+}
+#container .frm .m .mainArea .main_r .loginTitle
+{
+	background:url(../images/Login/Login_Title.jpg) no-repeat;
+	width:322px;
+	height:51px;
+	margin:9px 0 0 10px;
+}
+#container .frm .m .mainArea .main_r ul
+{
+	margin:15px;
+	font-family:"微软雅黑","黑体","宋体","Times New Roman";
+}
+#container .frm .m .mainArea .main_r ul li
+{
+	height:50px;
+	line-height:50px;
+}
+#container .frm .m .mainArea .main_r ul li input
+{
+	height:30px;
+	line-height:30px;
+	border:solid 1px #ccc;
+	width:260px;
+	background:#eafcff;
+	color:#555;
+	margin-left:15px;
+	padding-left:5px;
+}
+#container .frm .m .mainArea .main_r ul li input#txtPassword,#container .frm .m .mainArea .main_r ul li input#showPwd
+{
+	background:#fffeea;
+}
+#container .frm .m .mainArea .main_r ul li input#txtPassword
+{
+    display:none;
+}
+#container .frm .m .mainArea .main_r ul li input#txtValidatorCode
+{
+	background:#fff2df;
+	width:150px;
+}
+#container .frm .m .mainArea .main_r ul li .vImg
+{
+	position:relative;
+	top:8px;
+	_top:3px;
+	left:5px;
+}
+
+/*Btns style*/
+#container .frm .m .mainArea .main_r .loginBtn
+{
+	margin:20px;
+	margin-left:70px;
+}
+#container .frm .m .mainArea .main_r .loginBtn .BtnLogin
+{
+	background:url(../images/Login/Login_BtnSub.jpg) no-repeat;
+	width:101px;
+	height:48px;
+	border:none;
+	cursor:pointer;
+}
+#container .frm .m .mainArea .main_r .loginBtn span
+{
+	color:#a40059;
+	margin-left:15px;
+	text-decoration:underline;
+	cursor:pointer;
+	vertical-align:bottom;
+}
+
+/*Copyright style*/
+#container .frm .m .mainArea .main_r .copInfo
+{
+	color:#aaa;
+	text-align:right;
+	right:15px;
+	position:absolute;
+	bottom:10px;
+}

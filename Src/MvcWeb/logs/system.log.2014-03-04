@@ -1,0 +1,43 @@
+----------log begin---------- 
+2014-03-04 00:00:03,865 [21] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:00:03 
+
+2014-03-04 00:01:03,936 [21] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:01:03 
+----------log end---------- ----------log begin---------- 
+2014-03-04 00:01:56,451 [15] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:01:56 
+
+2014-03-04 00:02:56,477 [15] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:02:56 
+
+2014-03-04 00:03:56,478 [15] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:03:56 
+
+2014-03-04 00:04:56,479 [15] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:04:56 
+
+2014-03-04 00:05:56,480 [15] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:05:56 
+
+2014-03-04 00:06:56,480 [15] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:06:56 
+
+2014-03-04 00:07:56,481 [15] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:07:56 
+----------log end---------- ----------log begin---------- 
+2014-03-04 00:07:59,326 [13] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:07:59 
+
+2014-03-04 00:08:59,354 [13] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:08:59 
+
+2014-03-04 00:09:59,355 [13] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:09:59 
+
+2014-03-04 00:10:59,355 [13] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:10:59 
+
+2014-03-04 00:11:59,356 [13] ERROR Log4NetHope.LogBase 
+ - thread is running¡­¡­2014/3/4 0:11:59 
+----------log end---------- 

@@ -1,0 +1,826 @@
+----------log begin---------- 
+2013-03-25 09:12:11,652 [7] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 09:29:52,840 [21] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 09:30:52,334 [21] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 09:30:52,436 [21] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 09:40:02,073 [21] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+
+2013-03-25 09:41:25,025 [21] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 09:41:25,026 [21] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 09:41:25,027 [21] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+----------log end---------- ----------log begin---------- 
+2013-03-25 09:42:19,310 [12] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 09:46:24,641 [12] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 09:46:24,778 [12] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientSqlCommandSet.ExecuteNonQuery() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientSqlCommandSet.cs:行号 117
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 105
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions(IList list) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 130
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 09:49:04,233 [12] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientSqlCommandSet.ExecuteNonQuery() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientSqlCommandSet.cs:行号 117
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 105
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions(IList list) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 130
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 255
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+
+2013-03-25 10:00:09,431 [27] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 10:00:09,535 [27] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientSqlCommandSet.ExecuteNonQuery() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientSqlCommandSet.cs:行号 117
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 105
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions(IList list) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 130
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 10:08:38,356 [27] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientSqlCommandSet.ExecuteNonQuery() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientSqlCommandSet.cs:行号 117
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 105
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions(IList list) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 130
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 255
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+----------log end---------- ----------log begin---------- 
+2013-03-25 10:13:56,321 [5] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 10:13:57,069 [5] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 10:13:57,070 [5] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 10:13:57,247 [5] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+
+2013-03-25 10:17:03,771 [10] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 10:17:03,842 [10] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 10:17:03,949 [10] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+----------log end---------- ----------log begin---------- 
+2013-03-25 10:20:29,041 [6] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 10:25:48,753 [12] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 10:28:17,990 [12] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 10:28:18,614 [12] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 10:28:18,623 [12] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 10:28:18,793 [12] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+
+2013-03-25 10:28:57,896 [5] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 10:28:57,963 [5] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 10:29:12,944 [5] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+
+2013-03-25 10:32:17,539 [5] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 10:32:17,539 [5] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 10:32:17,540 [5] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+----------log end---------- ----------log begin---------- 
+2013-03-25 10:33:57,174 [10] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 10:36:58,793 [6] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 10:36:58,872 [6] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 10:46:21,719 [6] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 70
+----------log end---------- ----------log begin---------- 
+2013-03-25 11:04:00,468 [43] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 11:04:01,077 [43] ERROR NHibernate.Util.ADOExceptionReporter 
+ - XML 分析: 行 1，字符 38，无法切换编码 
+
+2013-03-25 11:04:01,078 [43] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-03-25 11:04:01,262 [43] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: XML 分析: 行 1，字符 38，无法切换编码
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 93
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 104
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 437
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 421
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\ActionQueue.cs:行号 170
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 1487
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Transaction\AdoTransaction.cs:行号 193
+   在 Hope.CIMS.DAL.MedPatientDAL.Add(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 71
+----------log end---------- ----------log begin---------- 
+2013-03-25 11:04:37,386 [30] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 11:15:20,898 [38] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 11:15:52,774 [38] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 88, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+----------log end---------- ----------log begin---------- 
+2013-03-25 11:24:30,792 [10] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 11:35:51,777 [10] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 11:38:46,771 [6] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+----------log end---------- ----------log begin---------- 
+2013-03-25 11:45:50,614 [10] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 11:45:55,478 [10] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:45:59,769 [10] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:50:10,769 [8] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:51:46,756 [8] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:52:12,527 [10] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:52:15,934 [9] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:53:19,466 [9] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:53:22,869 [6] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 56.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:54:22,575 [10] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 61.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:54:25,659 [39] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 61.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:54:48,228 [10] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 59.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-03-25 11:54:49,087 [9] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 80, column 59.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+----------log end---------- ----------log begin---------- 
+2013-03-25 12:18:31,232 [5] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 13:55:42,487 [5] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 14:05:02,174 [11] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 101, column 71.
+Was expecting one of:
+    "}" ...
+    <DOT> ...
+    "(" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\sysuey\CIMS\TemplateHandler\VelocityHelper.cs:行号 116 
+----------log end---------- ----------log begin---------- 
+2013-03-25 14:40:11,814 [10] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 15:21:30,706 [16] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 15:35:11,363 [31] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 15:45:16,045 [22] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 15:47:08,065 [29] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 15:47:45,335 [15] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 15:50:57,813 [25] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 16:30:38,399 [37] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 16:40:53,512 [25] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 17:01:45,193 [7] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 17:05:18,337 [29] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 17:05:34,262 [16] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+----------log end---------- ----------log begin---------- 
+2013-03-25 17:17:50,643 [17] ERROR Log4NetHope.LogBase 
+ - 启动NHibernate... 
+
+2013-03-25 17:24:00,253 [7] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.NonUniqueObjectException: a different object with the same identifier value was already associated with the session: d529467eda34432d, of entity: Hope.CIMS.Model.CommonResult
+   在 NHibernate.Engine.StatefulPersistenceContext.CheckUniqueness(EntityKey key, Object obj) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\StatefulPersistenceContext.cs:行号 692
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.PerformUpdate(SaveOrUpdateEvent event, Object entity, IEntityPersister persister) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 229
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 70
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 2660
+   在 NHibernate.Impl.SessionImpl.SaveOrUpdate(Object obj) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 541
+   在 Hope.CIMS.DAL.MedPatientDAL.Save(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 68
+
+2013-03-25 17:25:28,079 [7] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.NonUniqueObjectException: a different object with the same identifier value was already associated with the session: d529467eda34432d, of entity: Hope.CIMS.Model.CommonResult
+   在 NHibernate.Engine.StatefulPersistenceContext.CheckUniqueness(EntityKey key, Object obj) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\StatefulPersistenceContext.cs:行号 692
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.PerformUpdate(SaveOrUpdateEvent event, Object entity, IEntityPersister persister) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 229
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 70
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 2660
+   在 NHibernate.Impl.SessionImpl.SaveOrUpdate(Object obj) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 541
+   在 Hope.CIMS.DAL.MedPatientDAL.Save(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 68
+
+2013-03-25 17:27:36,745 [28] ERROR Log4NetHope.LogBase 
+ - Hope.CIMS.Model.MedPatient 
+NHibernate.NonUniqueObjectException: a different object with the same identifier value was already associated with the session: d529467eda34432d, of entity: Hope.CIMS.Model.CommonResult
+   在 NHibernate.Engine.StatefulPersistenceContext.CheckUniqueness(EntityKey key, Object obj) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Engine\StatefulPersistenceContext.cs:行号 692
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.PerformUpdate(SaveOrUpdateEvent event, Object entity, IEntityPersister persister) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 229
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 70
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSaveOrUpdate(SaveOrUpdateEvent event) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 2660
+   在 NHibernate.Impl.SessionImpl.SaveOrUpdate(Object obj) 位置 d:\CSharp\NH\NH\nhibernate\src\NHibernate\Impl\SessionImpl.cs:行号 541
+   在 Hope.CIMS.DAL.MedPatientDAL.Save(MedPatient patientData, MedPhysical physicalData, List`1 resultList) 位置 D:\Work\sysuey\CIMS\DAL\Class\MedPatientDAL.cs:行号 68
+----------log end---------- 

@@ -1,0 +1,212 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>module</title>
+    #parse("HeadPage.html")
+    <link rel="stylesheet" type="text/css" href="${HopeTag.InstallDir}Style/dhtmlXTree.css" />			    
+	<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/dhtmlXTree.js"></script>    
+     <script language="javascript" type="text/javascript">
+         function saveMenu() {
+             CollectNodes();
+             GenerateMenu();
+         }
+
+         //重新生成文件
+         function GenerateMenu() {
+             var url = "${HopeTag.InstallDir}/Menu/Generate";
+             var pars = "xmlStr="+ $F("hiMenuTreeIds");
+             var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionComplete });
+         }
+    </script>	
+</head>
+<body style="overflow-x:hidden;">
+    <div id="wrap">
+    
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+		<div class="l">
+		    <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+		    <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> 菜单管理           
+		</div>
+	</div>
+	<!--End : 顶部导航-->
+
+    <!--float div-->
+    <div id="searchspe" style='Z-INDEX: 100; right: 10px; POSITION:fixed; TOP: 70px;'>
+        <table cellspacing="0" cellpadding="0" width="200" style="background:#2E6287;border:1px solid #333333;font-size:12px;padding:5px 10px">
+            <tr>
+                <td><a href="javascript:LoadCompleteMenu();"><img src="${HopeTag.InstallDir}Images/Icon/layout.png" height="16" width="16" alt="加载完整菜单" align="absmiddle" /> <font color="white">完整</font></a></td>
+                <td><a href="javascript:saveMenu();"><img src="${HopeTag.InstallDir}Images/Icon/disk.png" alt="保存菜单" style="cursor:pointer;width:16px;height:16px; margin-top:3px" align="absmiddle"/> <font color="white">保存</font></a></td>
+                <td><a href="javascript:DeleteItem();"><img src="${HopeTag.InstallDir}Images/Icon/cross.png" alt="删除选项" style="cursor:pointer;width:16px;height:16px; margin-top:3px" align="absmiddle" /> <font color="white">删除</font></a></td>
+            </tr>
+        </table>
+    </div>
+
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <!--float div-->
+        <div style="width:25%;Z-INDEX: 10; POSITION:fixed; left:25%;TOP: 100px;">
+        <table cellpadding="2" cellspacing="1" class="DataDetail" id="container_1">
+            <tr>
+                <th colspan="2">系统菜单参数</th>
+            </tr>
+            <tr>
+                <td class="title" style="width:35%;">模块ID：</td>
+                <td><label id="lblNodeId"></label></td>
+            </tr>
+            <tr>
+                <td class="title">模块名称：</td>
+                <td><label id="lblNodeName"></label></td>
+            </tr>
+            <tr>
+                <td class="title">默认URL：</td>
+                <td><label id="lblDefaultUrl"></label></td>
+            </tr>
+        </table> 
+        </div>    
+         <!--float div-->
+        <div style="width:25%;Z-INDEX: 10; POSITION:fixed; right:10px; TOP: 100px;">
+        <table cellpadding="2" cellspacing="1" class="DataDetail" id="container_2">
+            <tr>
+                <th colspan="2">本地菜单参数</th>
+            </tr>
+            <tr>
+                <td class="title" style="width:35%;">模块ID：</td>
+                <td><label id="lblNodeId2"></label></td>
+            </tr>
+            <tr>
+                <td class="title">模块名称：</td>
+                <td><label id="lblNodeName2"></label></td>
+            </tr>
+            <tr>
+                <td class="title">默认URL：</td>
+                <td><label id="lblDefaultUrl2"></label></td>
+            </tr>
+        </table>  
+        </div>
+
+        <!--tree boxs-->
+        <table width="100%" cellpadding="0" cellspacing="1" style="margin-top:10px; background:#ddd;">
+            <tr>
+                <th style="width:50%;background:#e5f5fb;line-height:30px;">系统完整菜单</th>
+                <th style="background:#e5f5fb;">本地现有菜单</th>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <div id="treeBox1" style="width:100%;background-color:#f5f5f5;overflow:auto;"></div>
+                </td>
+                <td valign="top" style="background:#fff;">
+                  <input type="hidden" id="hiMenuTreeIds" value="" />
+                  <div id="treeBox2" style="width:100%;background-color:#f5f5f5;overflow:auto;"></div>
+                </td>
+            </tr>
+        </table>
+     
+<!--End : 表格列表-->    
+    <script type="text/javascript" language="JavaScript">
+        tree = new dhtmlXTreeObject("treeBox1", "100%", "100%", 0);
+        tree.setImagePath("${HopeTag.InstallDir}Images/TreeImgs/");
+        tree.enableDragAndDrop(1);
+        tree.loadXML("${HopeTag.InstallDir}menu/GetMenuTreeXML?TempID=" + Math.random());
+        tree.setOnClickHandler(tonclick);
+
+        function tonclick(id) {
+
+            setLabel(
+		        tree.getItemText(id),
+		        tree.getSelectedItemId(),
+		        tree.getParmText(id, 'data1')
+		        );
+        }
+
+        // 设置Label
+        function setLabel(name, id, url) {
+            $("#lblNodeName")[0].innerHTML = name;
+            $("#lblNodeId")[0].innerHTML = id;
+            $("#lblDefaultUrl")[0].innerHTML = url;
+        }
+
+        tree2 = new dhtmlXTreeObject("treeBox2", "100%", "100%", 0);
+        tree2.setImagePath("${HopeTag.InstallDir}Images/TreeImgs/");
+        tree2.enableDragAndDrop(1);
+        tree2.loadXML("${HopeTag.InstallDir}menu/GetMenuTreeXML2?TempID=" + Math.random());
+        tree2.setOnClickHandler(tonclick2);
+
+        function tonclick2(id) {
+
+            setLabel2(
+		        tree2.getItemText(id),
+		        tree2.getSelectedItemId(),
+		        tree2.getParmText(id, 'data1')
+		        );
+        }
+
+        // 设置Label
+        function setLabel2(name, id, url) {
+            $("#lblNodeName2")[0].innerHTML = name;
+            $("#lblNodeId2")[0].innerHTML = id;
+            $("#lblDefaultUrl2")[0].innerHTML = url;
+        }
+
+        function DeleteItem() {
+            //alert(tree2.getSelectedItemId());
+            if (tree2.getSelectedItemId() == "") alert("请先选择");
+            else
+                tree2.deleteItem(tree2.getSelectedItemId(), false);
+        }
+
+        var _xmlDoc = '<?xml version="1.0" encoding="utf-8"?><tree id="0">'; //'<?xml version="1.0" encoding="utf-8"?><tree id="0">';
+
+        function CollectNodes() {
+            var ids = tree2.getSubItems(0);
+            var tempCheckStr = ids.split(',');
+            $(tempCheckStr).each(function (index,id) {
+
+                _xmlDoc += '<item';
+                _xmlDoc += ' id="' + id + '"';
+                _xmlDoc += ' name="' + tree2.getItemText(id) + '"';
+                _xmlDoc += ' url="' + tree2.getParmText(id, 'data1') + '"';
+                _xmlDoc += '>';
+
+                if (tree2.hasChildren(id)) {
+                    IterateColectingNodes(id);
+                }
+                _xmlDoc += '</item>';
+            });
+
+            _xmlDoc += "</tree>";
+            //alert($('hiMenuTreeIds').value);
+            $('#hiMenuTreeIds')[0].value = _xmlDoc;
+            return true;
+        }
+
+        function IterateColectingNodes(pId) {
+            var subItemIds = tree2.getSubItems(pId);
+            var tempCheckStr = subItemIds.split(',');
+            $(tempCheckStr).each(function (index, id) {               
+                _xmlDoc += '<item';
+                _xmlDoc += ' id="' + id + '"';
+                _xmlDoc += ' name="' + tree2.getItemText(id) + '"';
+                _xmlDoc += ' url="' + tree2.getParmText(id, 'data1') + '"';
+                _xmlDoc += '>';
+
+                if (tree2.hasChildren(id)) {
+                    IterateColectingNodes(id);
+                }
+
+                _xmlDoc += '</item>';
+            });
+        }
+
+        function LoadCompleteMenu() {
+            tree2.deleteChildItems("0");
+            tree2.loadXML("${HopeTag.InstallDir}menu/GetMenuTreeXML?TempID=" + Math.random());
+        }
+    
+    </script>
+    </div>
+</div>
+</body>
+</html>

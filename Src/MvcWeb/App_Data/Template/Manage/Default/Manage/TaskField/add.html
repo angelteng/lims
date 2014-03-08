@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--新增任务字段</title>
+#parse("HeadPage.html")
+#if($SavePermission)
+    <!--可选：表单输入验证-->
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.methods.js"></script> 
+#end
+</head>
+<body>
+<form id="frmInput" method="post">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmnamedle" wnameth="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}TaskField">任务字段管理</a> >> 新增任务字段
+        </div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+        <dl>		
+            <dt>标志符 <span class="NeedEnter">*</span></dt>
+            <dd>
+                <input type="hidden" name="ModelID" id="txtModelID" class="normalinput" value="${ModelID}"/>
+                <input type="text" name="Code" id="txtCode" class="normalinput required"/>
+            </dd>
+		</dl>
+        <dl>		
+            <dt>字段名称  <span class="NeedEnter">*</span></dt>
+            <dd><input type="text" name="Name" id="txtName" class="normalinput required"/></dd>
+		</dl>
+        <dl>		
+            <dt>前缀 </dt>
+            <dd><input type="text" name="PrefixText" id="txtPrefixText" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>后缀 </dt>
+            <dd><input type="text" name="SuffixText" id="txtSuffixText" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>组件类型 </dt>
+            <dd>
+                <select name="ComponentType" id="ssComponentType">
+                    #foreach($Item in ${HopeTag.GetInputTypeListCN})
+                    <option value="${Item.Key}">${Item.Value}</option>
+                    #end
+                </select>
+            </dd>
+		</dl>
+        <dl>		
+            <dt>组件宽度 </dt>
+            <dd><input type="text" name="ComponentWidth" id="txtComponentWidth" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+		    <dt>是否必填</dt>
+            <dd>
+			<input type="radio" checked="checked" id="Required_01" name="Required" value="true" /><label for="Required_01" style="font-weight:normal">是</label>
+			<input type="radio" id="Required_02" name="Required" value="false" /><label for="Required_02" style="font-weight:normal">否</label>
+			</dd>
+		</dl>
+        <dl>		
+            <dt>默认值 </dt>
+            <dd><input type="text" name="DefaultValue" id="txtDefaultValue" class="normalinput"/></dd>
+		</dl>
+        <dl style="display: none;" id="ddListItem">		
+            <dt>字段内容（key=value） </dt>
+            <dd>
+                <textarea name="ListItem" rows="3" id="txtListItem"  cols="20" class="normalinput" style="width: 30%;height:100px;"></textarea>
+            </dd>
+        </dl>
+        <dl>		
+		    <dt>是否显示</dt>
+            <dd>
+			<input type="radio" checked="checked" id="IsShow_01" name="IsShow" value="true" /><label for="IsShow_01" style="font-weight:normal">是</label>
+			<input type="radio" id="IsShow_02" name="IsShow" value="false" /><label for="IsShow_02" style="font-weight:normal">否</label>
+			</dd>
+		</dl>
+        <dl>		
+            <dt>组件ID </dt>
+            <dd><input type="text" name="ComponentID" id="txtComponentID" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>组件类名 </dt>
+            <dd><input type="text" name="ClassName" id="txtClassName" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>校验 </dt>
+            <dd><input type="text" name="Regex" id="txtRegex" class="normalinput"/></dd>
+		</dl>
+        <dl>		
+            <dt>备注 </dt>
+            <dd><textarea name="Remark" rows="3" cols="20" class="normalinput" style="width: 60%;height:100px;"></textarea></dd>
+		</dl>
+		
+		<div class="btnArea">
+			#if($SavePermission)<input type="submit" class="ActionButton" value="保存"/>#end
+			<input type="button" class="ActionButton" onclick="window.history.back()" value="返回"/>
+		</div>
+	</div>
+    </div>
+    <!--End : 表格列表-->
+    </div>
+  </form>
+  #if($SavePermission)
+  <script type="text/javascript">
+      jQuery(document).ready(function () {
+          $("#ssComponentType").change(function () {
+              var val = $(this).val();
+              if (val == 2 || val == 3 || val == 4) {
+                  $("#ddListItem").css({ "display": "block" });
+              } else {
+                  $("#ddListItem").css({ "display": "none" });
+              }
+          });
+          jQuery("#frmInput").validate({
+              submitHandler: function () {
+                  var url = "${HopeTag.InstallDir}TaskField/Save/";
+                  var pars = jQuery('#frmInput').serialize();
+                  var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionCompleteGo });
+              }
+          });
+      });
+  </script>
+  #end
+</body>
+</html>
+

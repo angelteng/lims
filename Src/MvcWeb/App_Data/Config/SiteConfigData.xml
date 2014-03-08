@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SiteConfig>
+  <BaseConfig>
+    <SiteName>智能型贵重仪器预约与管理系统的开发</SiteName>
+    <SiteUrl>http://cms.jiangjianfeng.com</SiteUrl>
+    <SiteLogo>/Images/Admin/logo.jpg</SiteLogo>
+    <SiteICPNum>ICP证粤A1-20100101</SiteICPNum>
+    <SiteCopyright>Copyright © 2013 Angel.Teng</SiteCopyright>
+  </BaseConfig>
+  <FileUpload>
+    <EnbleFileUpload>false</EnbleFileUpload>
+    <FileUploadMaxSize>0</FileUploadMaxSize>
+    <FileUploadDir>UploadFiles</FileUploadDir>
+    <FileUploadType>rar|doc|ppt|pptx|xls|xlsx|bmp|jpg|png|gif|rtf|pptx|xlsx|mp3|zip|docx|flv|7z|txt|pdf</FileUploadType>
+    <UploadFilePath>${FileType}/${Year}/${Month}</UploadFilePath>
+    <UploadFileName>${Origin}${Year}${Month}${Day}</UploadFileName>
+    <UserFileUploadType>gif|png|jpeg|jpg|bmp</UserFileUploadType>
+    <UserFileUploadDir>UserPic</UserFileUploadDir>
+    <FileDeleteDelay>8</FileDeleteDelay>
+  </FileUpload>
+  <SMSConfig>
+    <EnableSMS>false</EnableSMS>
+    <SMSUserName>yidong</SMSUserName>
+    <SMSUserPwd>DHYA9YiXjzE=</SMSUserPwd>
+    <SMSDelay>0</SMSDelay>
+    <SMSContent>尊敬的${Recipient}先生/女士，你所订购的${Si_No}物品已于${DayNow}发货。请您注意查收！查询电话：020-88995566</SMSContent>
+  </SMSConfig>
+  <MailConfig>
+    <EnableMail>true</EnableMail>
+    <MailAccount>xingzhewujiang1999@gmail.com</MailAccount>
+    <MailPasswd>yvsnHr/GfSNNzGT5VOOUKB7RCN9gjDaS</MailPasswd>
+    <DisplayName>高校国际会议会务组</DisplayName>
+    <SmtpHost>smtp.gmail.com</SmtpHost>
+    <Port>587</Port>
+    <RegisterMsg>欢迎参加厚朴全员大会</RegisterMsg>
+  </MailConfig>
+</SiteConfig>

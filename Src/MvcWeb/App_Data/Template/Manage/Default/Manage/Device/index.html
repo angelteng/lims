@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--仪器管理</title>
+#parse("HeadPage.html")
+    <script language="javascript" type="text/javascript">
+	//搜索
+    function showSearchResult() {
+        var key = $("#ddlSearchField").val();
+        var value = $("#txtSearchKey").val();
+        var isblur = $("#blurSearch").attr("checked");
+
+        if (value!="" && CheckString(value)) {
+            LinkPage("?k=" + key + "&v=" + value + "&IsBlur=" + isblur);
+        }
+        else {
+            alert("请正确输入关键词");
+        }
+    }
+		
+	#if($PermissionDelete)
+    currentDirPath = "${HopeTag.InstallDir}Device/";
+	//删除选定
+    function DeleteSelected() {
+        selectedIDList = GetSelectedIDList("cbID");
+        if (selectedIDList == "") {
+            ymPrompt.alert({ message: '请选择需要删除的仪器！', slideShowHide: false, title: '仪器管理', handler: handler });
+            return;
+        }
+        else {
+            ymPrompt.alert({ message: '确认删除所选仪器？', slideShowHide: false, title: '仪器管理', handler: handlerDelete, btn: [['是', 'yes'], ['否', 'no']] })
+        }
+    }
+	
+	/* 删除本行记录 */
+    function DeleteOne(Id) {
+        selectedIDList = Id;
+        ymPrompt.alert({ message: '确认删除所选仪器？', slideShowHide: false, title: '仪器管理', handler: handlerDelete, btn: [['是', 'yes'], ['否', 'no']] })
+    }
+	#end
+    </script>
+</head>
+<body>
+ <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="r">
+	        <ul>
+#if($PermissionAdd)
+			<li><a href="${HopeTag.InstallDir}Device/New"><img src="${HopeTag.InstallDir}Images/Icon/add.png" align="absmiddle" width="14" height="14" /></a><a href="${HopeTag.InstallDir}Device/New">&nbsp;新增</a></li>
+#end
+#if($PermissionDelete)
+            <li onclick="DeleteSelected()"><a href="javascript:void(0);"><img src="${HopeTag.InstallDir}Images/Icon/cross.png" align="absmiddle" width="14" height="14" /></a>&nbsp;删除</a></li>
+#end
+        </ul>
+        </div>		        
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;<a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> 仪器管理
+        </div>
+    </div>
+   <!--End : 顶部导航-->
+   <!--搜索开始-->
+     <div class="QueryBar">
+            搜索：<select id="ddlSearchField" name="ddlSearchField">
+                <option value="ID">ID</option>
+                <option value="Name">名称</option>
+            </select>
+            <input type="text" name="txtSearchKey" id="txtSearchKey"/>
+            <input type="button" id="btnSearch" value="搜索" class="ActionButton" onclick="showSearchResult();"/>
+            <input type="checkbox" id="blurSearch" value="on" /><label for="blurSearch">模糊搜索</label>
+      </div>
+    <!--搜索结束-->	  
+  	 <!--Begin : 表格列表-->
+     <div class="m">	
+     <table class="m_list" width="100%" border="0" cellpadding="0" cellspacing="1">
+            <tr class="m_list_t"> 
+            <th width="30"><input type="checkbox" id="cbID_All" name="cbID_All" value="0" onclick="ToggleChb();" /></th>
+            <th>仪器名称</th>
+            <th>仪器型号</th>
+            <th>仪器负责人</th>
+            <th>测试内容</th>
+            <th>图片</th>
+            <th>操作视频</th>
+            <th>说明</th>
+            <th>查看</th>
+            <th>修改</th>
+            <th>删除</th>
+            </tr>
+#foreach($ItemData in $EntityList)
+        <tr class="m_list_i" onmouseover="focusit(this);" onmouseout="blurit(this);">
+            <td align="center"><input type="checkbox" class="chkIds" id="cbID" name="cbID" value="$ItemData.ID" /></td>
+            <!--<td align="center">#if($PermissionEdit)<a href="${HopeTag.InstallDir}Device/Modify/${ItemData.ID}">${ItemData.Name}</a>#else${ItemData.Name}#end</td>-->
+            <td align="center">${ItemData.CNName}</td>
+            
+            <td align="center">${ItemData.DeviceModel}</td>
+            <td align="center">${ItemData.PersonInCharge}</td>
+            <td align="center">${ItemData.TestContent}</td>
+            <td align="center">${ItemData.Pic}</td>
+            <td align="center">${ItemData.Video}</td>
+            <td align="center">${ItemData.Information}</td>
+            <!--<td align="center">${ItemData.Supplier}</td>
+            <td align="center">${ItemData.SupplierURL}</td>
+            <td align="center">${ItemData.Number}</td>
+            <td align="center">${ItemData.Price}</td>
+            <td align="center">${HopeTag.GetStatus(${ItemData.Status})}</td>
+            <td align="center">${ItemData.OrderNum}</td>
+            
+            <td align="center">${ItemData.Contact}</td>
+            
+            <td align="center">${ItemData.BeginTime}</td>
+            <td align="center">${ItemData.EndTime}</td>
+            <td align="center">${ItemData.MaxApplyTIme}</td>
+            <td align="center">${ItemData.MaxPreApplyTIme}</td>
+            <td align="center">${ItemData.Location}</td>-->
+            <td align="center">
+			#if($PermissionView)<a href="${HopeTag.InstallDir}Device/Preview/${ItemData.ID}">查看</a>#end
+            </td>
+            <td>
+			#if($PermissionEdit)<a href="${HopeTag.InstallDir}Device/Modify/${ItemData.ID}">编辑</a>#end
+            </td>
+            <td>
+			#if($PermissionDelete)<a href="javascript:DeleteOne(${ItemData.ID})">删除</a>#end
+			</td>
+        </tr>
+#end
+    </table>
+   </div>
+    #parse("Pager.html")
+</div>
+</body>
+</html>
+

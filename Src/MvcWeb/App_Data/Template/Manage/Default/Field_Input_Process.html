@@ -1,0 +1,68 @@
+﻿#macro(For $CurrentIndex $MaxIndex $Module $FieldCode $ResultCollection)
+#if($CurrentIndex <= $MaxIndex)
+#set($CurrentCode = "${Module}_${FieldCode}_Extend${CurrentIndex}")
+#set($CurrentValue = false)
+#set($CurrentValue = ${HopeTag.GetValue($CurrentCode,$ResultCollection)})
+#if(!$CurrentValue) #set($CurrentValue = "") #end
+${CurrentIndex}.<input name="${CurrentCode}" type="text" value="${CurrentValue}" class="normalinput" style="width:100px;" />
+#set($CurrentIndex = $CurrentIndex + 1)
+#For($CurrentIndex $MaxIndex $Module $FieldCode $ResultCollection)
+#end
+#end
+
+#macro(ShowInput $Module $CustomFields $ResultCollection)
+#foreach($Field in $CustomFields)
+#set($FieldCode = "${Module}_${Field.Code}")
+#set($FieldValue = false)
+#if($ResultCollection.Count > 0) #set($FieldValue = $CurrentApplication.GetValue($FieldCode,$ResultCollection)) #end
+#if(!$FieldValue) #set($FieldValue = $Field.DefaultValue) #end
+
+#if($Field.NewLine) </dd></dl><dl><dd> #end
+
+$Field.PrefixText
+#if($Field.InputType == "TextArea")
+<textarea name="${FieldCode}" #if(${Field.InputWidth} != "") style="width:${Field.InputWidth};" #end>$FieldValue</textarea>
+#elseif($Field.InputType == "Radio")
+#foreach($Item in $Field.ListItems)
+<input name="${FieldCode}" type="radio" value="$Item.Key" #if($FieldValue == $Item.Key) checked #end />$Item.Value
+#end
+#elseif($Field.InputType == "CheckBox")
+#foreach($Item in $Field.ListItems)
+<input name="${FieldCode}" type="checkbox" value="$Item.Key" #if($FieldValue == $Item.Key) checked #end />$Item.Value
+#end
+#elseif($Field.InputType == "DropDownList")
+<select name="${FieldCode}">
+#foreach($Item in $Field.ListItems)
+<option value="$Item.Key" #if($FieldValue == $Item.Key) selected #end>$Item.Value</option>
+#end
+</select>
+#elseif($Field.InputType == "File")
+<span style="color:Blue;">上传附件，待处理</span>
+#else
+<input name="${FieldCode}" type="text" value="$FieldValue" class="normalinput" #if(${Field.DataType}=="DateTime")onclick="SelectDate(this,'yyyy-MM-dd');"#end #if(${Field.InputWidth} != "") style="width:${Field.InputWidth};" #end />
+#end
+$Field.SuffixText
+
+#set($ExtendItems = $Field.ExtendItems)
+#set($Index = 1)
+#set($FieldCode = ${Field.Code})
+
+#if($ExtendItems > 0)
+<span class="InjectDates">
+#For($Index $ExtendItems $Module $FieldCode $ResultCollection)
+</span>
+#end
+
+#end
+#end
+
+
+
+#set($BasicFields = $Item.BasicInfo)
+#set($DrugFields = $Item.Medicine)
+#set($LumbarPunctureFields = $Item.LumbarPuncture)
+#set($ResultCollection = $Result.Collection)
+
+#ShowInput("BasicInfo" $BasicFields $ResultCollection)
+#ShowInput("Medicine" $DrugFields $ResultCollection)
+#ShowInput("Lumbar" $LumbarPunctureFields $ResultCollection)

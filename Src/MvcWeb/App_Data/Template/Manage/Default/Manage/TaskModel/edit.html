@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--修改任务模型信息</title>
+#parse("HeadPage.html")
+#if($SavePermission)
+    <!--可选：表单输入验证-->
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.methods.js"></script> 
+#end
+</head>
+<body>
+<form id="frmInput" method="post">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmnamedle" wnameth="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}TaskModel">任务模型管理</a> >> 修改任务模型
+        </div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+        <dl>
+            <dt>模型名称  <span class="NeedEnter">*</span></dt>
+            <dd>
+                <input type="hidden" name="Type" id="txtType" class="normalinput" value="${Entity.Type}"/>
+                <input type="text" name="Name" id="txtName" class="normalinput required" value="${Entity.Name}"/>
+            </dd>
+		</dl>
+        <dl>
+            <dt>图标 </dt>
+            <dd><input type="text" name="Icon" id="txtIcon" class="normalinput" value="${Entity.Icon}"/></dd>
+		</dl>
+        <dl>
+            <dt>个体名称 </dt>
+            <dd><input type="text" name="Item" id="txtItem" class="normalinput" value="${Entity.Item}"/></dd>
+		</dl>
+        <dl>
+            <dt>单位 </dt>
+            <dd><input type="text" name="Unit" id="txtUnit" class="normalinput" value="${Entity.Unit}"/></dd>
+		</dl>
+        <dl>
+		    <dt>启用验证码</dt>
+            <dd>
+			<input type="radio" #if($Entity.EnableValidateCode=="True")checked="checked"#end id="EnableValidateCode_01" name="EnableValidateCode" value="true" /><label for="EnableValidateCode_01" style="font-weight:normal">是</label>
+			<input type="radio" #if($Entity.EnableValidateCode=="False")checked="checked"#end id="EnableValidateCode_02" name="EnableValidateCode" value="false" /><label for="EnableValidateCode_02" style="font-weight:normal">否</label>
+			</dd>
+		</dl>
+        <dl>
+            <dt>状态 </dt>
+            <dd>
+                #foreach($Item in ${HopeTag.GetStatusListCN()})
+                <input type="radio" #if($Entity.Status==$Item.Key)checked="checked"#end name="Status" value="${Item.Key}" /><label>${Item.Value}</label>
+                #end
+            </dd>
+		</dl>
+        <dl>
+            <dt>描述</dt>
+            <dd>
+                <textarea name="Description" id="txtDescription" class="normalinput" style="width: 30%;height:100px;">${Entity.Description}</textarea>
+            </dd>
+		</dl>
+		
+		<div class="btnArea">
+			#if($SavePermission)<input type="submit" class="ActionButton" value="保存"/>#end
+			<input type="button" class="ActionButton" onclick="window.history.back()" value="返回"/>
+		</div>
+	</div>
+    </div>
+    <!--End : 表格列表-->
+    </div>
+	<input type="hidden" value="$Entity.ID" name="ID" />
+  </form>
+  #if($SavePermission)
+  <script type="text/javascript">
+      jQuery(document).ready(function () {
+          jQuery("#frmInput").validate({
+              submitHandler: function () {
+                  var url = "${HopeTag.InstallDir}TaskModel/Save/";
+                  var pars = jQuery('#frmInput').serialize();
+                  var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionCompleteGo });
+              }
+          });
+      });
+  </script>
+  #end
+</body>
+</html>
+

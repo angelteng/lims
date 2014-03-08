@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--任务模型查看</title>
+#parse("HeadPage.html")
+</head>
+<body>
+ <div id="wrap">
+
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+	#if($SavePermission)
+	 	<div class="r">
+	        <ul>
+		        <li><a href="${HopeTag.InstallDir}TaskModel/Modify/$Entity.ID"><img src="${HopeTag.InstallDir}Images/Icon/edit.png" align="absmiddle" width="14" height="14" /></a><a href="${HopeTag.InstallDir}TaskModel/Modify/$Entity.ID">&nbsp;编辑</a>
+		        </li>
+	        </ul>
+        </div>
+	#end
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--> <a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}TaskModel">任务模型管理</a> >> 查看任务模型               
+        </div>
+	 </div>
+    <!--End : 顶部导航-->
+    
+    <!--Begin : 表格列表-->
+    <div class="m">
+      <div class="contentInfo">
+        <dl>
+            <dt>主键、自增长</dt>
+            <dd>${Entity.ID}</dd>
+        </dl>
+        <dl>
+            <dt>模型类型</dt>
+            <dd>${Entity.Type}</dd>
+        </dl>
+        <dl>
+            <dt>模型名称</dt>
+            <dd>${Entity.Name}</dd>
+        </dl>
+        <dl>
+            <dt>图标</dt>
+            <dd>${Entity.Icon}</dd>
+        </dl>
+        <dl>
+            <dt>个体名称</dt>
+            <dd>${Entity.Item}</dd>
+        </dl>
+        <dl>
+            <dt>单位</dt>
+            <dd>${Entity.Unit}</dd>
+        </dl>
+        <dl>
+            <dt>序号</dt>
+            <dd>${Entity.OrderID}</dd>
+        </dl>
+        <dl>
+            <dt>启用验证码</dt>
+            <dd>${Entity.EnableValidateCode}</dd>
+        </dl>
+        <dl>
+            <dt>状态</dt>
+            <dd>${Entity.Status}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Description}</dd>
+        </dl>
+     </div>
+        
+     <div class="btnArea">
+        <input type="button" class="ActionButton" onclick="window.parent.history.back()" value="返回"/>
+     </div>   
+	
+     </div>
+    <!--End : 表格列表-->
+  </div>
+</body>
+</html>
+

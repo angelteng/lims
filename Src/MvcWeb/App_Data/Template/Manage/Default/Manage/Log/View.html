@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>--后台管理</title>
+#parse("HeadPage.html")
+</head>
+<body>
+ <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+	        <div class="l">
+	            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+	            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}Log">日志管理</a> >> 查看日志                
+	        </div>
+	 </div>
+    <!--End : 顶部导航-->
+    
+    <!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+            <dl>
+                <dt>日志序号</dt><dd>$Entity.ID</dd>
+            </dl>
+            <dl>
+                 <dt>日志标题</dt><dd>$Entity.Title</dd>
+            </dl>
+            <dl>
+                <dt>日志类型</dt><dd>${HopeTag.GetLogTypeCN($Entity.Type)}</dd>
+            </dl>
+            <dl>
+                <dt>优先级别</dt><dd>${HopeTag.GetLogPriorityCN($Entity.Priority)}</dd>
+            </dl>
+            <dl>
+                <dt>请求页面</dt><dd>$Entity.ScriptName</dd>
+           </dl>
+            <dl>
+                <dt>请求时间</dt><dd>${HopeTag.FormatDateTime($Entity.Timestamp)}</dd>
+            </dl>
+            <dl>
+                <dt>用户名</dt><dd>$Entity.UserName</dd>
+            </dl>
+            <dl>
+                <dt>访问IP地址</dt><dd>$Entity.UserIP</dd>
+            </dl>
+            <dl>
+                <dt>错误源</dt><dd>$Entity.Source</dd>     
+            </dl>
+            <dl>                   
+                <dt>日志内容</dt><dd>$Entity.Message</dd>
+             </dl>
+            <dl>
+                <dt>异常信息</dt><dd>$Entity.PostString</dd>
+            </dl>
+        </div>
+        
+        <div class="btnArea">
+            <input type="button" class="ActionButton" onclick="window.parent.history.back()" value="返回"/>
+        </div>
+     </div>
+    <!--End : 表格列表-->
+  </div>
+</body>
+</html>

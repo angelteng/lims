@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--任务管理</title>
+#parse("HeadPage.html")
+    <script language="javascript" type="text/javascript">
+	//搜索
+    function showSearchResult() {
+        var key = $("#ddlSearchField").val();
+        var value = $("#txtSearchKey").val();
+        var isblur = $("#blurSearch").attr("checked");
+
+        if (value!="" && CheckString(value)) {
+            LinkPage("?k=" + key + "&v=" + value + "&IsBlur=" + isblur);
+        }
+        else {
+            alert("请正确输入关键词");
+        }
+    }
+		
+	#if($PermissionDelete)
+    currentDirPath = "${HopeTag.InstallDir}RegularTask/";
+	//删除选定
+    function DeleteSelected() {
+        selectedIDList = GetSelectedIDList("cbID");
+        if (selectedIDList == "") {
+            ymPrompt.alert({ message: '请选择需要删除的任务！', slideShowHide: false, title: '任务管理', handler: handler });
+            return;
+        }
+        else {
+            ymPrompt.alert({ message: '确认删除所选任务？', slideShowHide: false, title: '任务管理', handler: handlerDelete, btn: [['是', 'yes'], ['否', 'no']] })
+        }
+    }
+	
+	/* 删除本行记录 */
+    function DeleteOne(Id) {
+        selectedIDList = Id;
+        ymPrompt.alert({ message: '确认删除所选任务？', slideShowHide: false, title: '任务管理', handler: handlerDelete, btn: [['是', 'yes'], ['否', 'no']] })
+    }
+	#end
+    </script>
+</head>
+<body>
+ <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="r">
+	        <ul>
+#if($PermissionAdd)
+			<li><a href="${HopeTag.InstallDir}RegularTask/New"><img src="${HopeTag.InstallDir}Images/Icon/add.png" align="absmiddle" width="14" height="14" /></a><a href="${HopeTag.InstallDir}RegularTask/New">&nbsp;新增</a></li>
+#end
+#if($PermissionDelete)
+            <li onclick="DeleteSelected()"><a href="javascript:void(0);"><img src="${HopeTag.InstallDir}Images/Icon/cross.png" align="absmiddle" width="14" height="14" /></a>&nbsp;删除</a></li>
+#end
+        </ul>
+        </div>		        
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;<a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> 任务管理
+        </div>
+    </div>
+   <!--End : 顶部导航-->
+   <!--搜索开始-->
+     <div class="QueryBar">
+            搜索：<select id="ddlSearchField" name="ddlSearchField">
+                <option value="ID">ID</option>
+                <option value="Name">名称</option>
+            </select>
+            <input type="text" name="txtSearchKey" id="txtSearchKey"/>
+            <input type="button" id="btnSearch" value="搜索" class="ActionButton" onclick="showSearchResult();"/>
+            <input type="checkbox" id="blurSearch" value="on" /><label for="blurSearch">模糊搜索</label>
+      </div>
+    <!--搜索结束-->	  
+  	 <!--Begin : 表格列表-->
+     <div class="m">	
+     <table class="m_list" width="100%" border="0" cellpadding="0" cellspacing="1">
+            <tr class="m_list_t"> 
+            <th width="30"><input type="checkbox" id="cbID_All" name="cbID_All" value="0" onclick="ToggleChb();" /></th>
+            <th>任务类型</th>
+            <th>任务名称</th>
+            <th>优先级</th>
+            <th>提交时间</th>
+            <th>期限</th>
+            <th>进度</th>
+            <th style="width:120px;">操作</th>
+        </tr>
+#foreach($ItemData in $EntityList)
+        <tr class="m_list_i" onmouseover="focusit(this);" onmouseout="blurit(this);">
+            <td align="center"><input type="checkbox" class="chkIds" id="cbID" name="cbID" value="$ItemData.ID" /></td>
+            <td align="center">${HopeTag.GetTaskType(${ItemData.TypeID}).Name}</td>
+            <td align="center">#if($PermissionEdit)<a href="${HopeTag.InstallDir}RegularTask/Modify/${ItemData.ID}">${HopeTag.FormatTitle(${ItemData.Name}, 20)}</a>#else${ItemData.Name}#end</td>
+            <td align="center"><font color="#if(${ItemData.Priority}<2)green#else red#end">${HopeTag.GetTaskPriorityCN(${ItemData.Priority})}</font></td>
+            <td align="center">${HopeTag.FormatDateTime(${ItemData.SubmitTime}, "yyyy-MM-dd HH:mm:ss")}</td>
+            <td align="center">${HopeTag.FormatDateTime(${ItemData.Deadline})}</td>
+            <td align="center">${HopeTag.GetProgressTypeCN(${ItemData.Progress})}</td>
+            <td align="center">
+			#if($PermissionView)<a href="${HopeTag.InstallDir}RegularTask/Preview/${ItemData.ID}">查看</a>#end
+			#if($PermissionEdit)<a href="${HopeTag.InstallDir}RegularTask/Modify/${ItemData.ID}">编辑</a>#end
+			#if($PermissionDelete)<a href="javascript:DeleteOne(${ItemData.ID})">删除</a>#end
+			</td>
+        </tr>
+#end
+    </table>
+   </div>
+    #parse("Pager.html")
+</div>
+</body>
+</html>
+

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--管理员查看</title>
+#parse("HeadPage.html")
+</head>
+<body>
+ <div id="wrap">
+
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+	#if($SavePermission)
+	 	<div class="r">
+	        <ul>
+		        <li><a href="${HopeTag.InstallDir}Admin/Modify/$Entity.ID"><img src="${HopeTag.InstallDir}Images/Icon/edit.png" align="absmiddle" width="14" height="14" /></a><a href="${HopeTag.InstallDir}Admin/Modify/$Entity.ID">&nbsp;编辑</a>
+		        </li>
+	        </ul>
+        </div>
+	#end
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字-->                
+        </div>
+	 </div>
+    <!--End : 顶部导航-->
+    
+    <!--Begin : 表格列表-->
+    <div class="m">
+      <div class="contentInfo">
+        <dl>
+            <dt>角色</dt>
+            <dd>${HopeTag.GetRoleCNName(${Entity.RoleID})}</dd>
+        </dl>
+        <dl>
+            <dt>登录名称</dt>
+            <dd>${Entity.Name}</dd>
+        </dl>
+        <dl>
+            <dt>真实姓名</dt>
+            <dd>${Entity.RealName}</dd>
+        </dl>
+        <dl>
+            <dt>状态</dt>
+            <dd><font color="#if(${Entity.Status}==1)green#else red#end">${HopeTag.GetStatusCN(${Entity.Status})}</font></dd>
+        </dl>
+        <dl>
+            <dt>联系电话</dt>
+            <dd>${Entity.PhoneNo}</dd>
+        </dl>
+        <dl>
+            <dt>电子邮箱</dt>
+            <dd>${Entity.Email}</dd>
+        </dl>
+        <dl>
+            <dt>登录次数</dt>
+            <dd>${Entity.LoginTimes}</dd>
+        </dl>
+        <dl>
+            <dt>上次登录时间</dt>
+            <dd>${Entity.LastLoginTime.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt>登录失败次数</dt>
+            <dd>${Entity.ErrorTimes}</dd>
+        </dl>
+        <dl>
+            <dt>上次登录失败时间</dt>
+            <dd>${Entity.LastErrorTime.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt>备注</dt>
+            <dd>${Entity.Remark}</dd>
+        </dl>
+     </div>
+        
+     <div class="btnArea">
+        <input type="button" class="ActionButton" onclick="window.parent.history.back()" value="返回"/>
+     </div>   
+	
+     </div>
+    <!--End : 表格列表-->
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tree id="0">
+  <item id="M1" name="系统配置" url="">
+    <item id="M2" name="模块管理" url="~/Module/">
+      <item id="F1" name="功能模块管理" url="~/Module/">
+      </item>
+      <item id="F21" name="保存功能模块" url="~/Module/Save/">
+      </item>
+      <item id="F22" name="生成功能模块文件" url="~/Module/Generate/">
+      </item>
+    </item>
+    <item id="M3" name="参数配置" url="~/config/">
+      <item id="F2" name="系统设置" url="~/config/">
+      </item>
+      <item id="F23" name="保存系统设置" url="~/Config/Save/">
+      </item>
+    </item>
+    <item id="M4" name="菜单管理" url="~/Menu/">
+      <item id="F3" name="菜单设置" url="~/Menu/">
+      </item>
+      <item id="F24" name="生成菜单配置文件" url="~/Menu/Generate/">
+      </item>
+    </item>
+    <item id="M8" name="日志管理" url="~/Log/">
+      <item id="F18" name="日志列表" url="~/Log/">
+      </item>
+      <item id="F19" name="日志查看" url="~/Log/PreView/">
+      </item>
+      <item id="F20" name="日志删除" url="~/Log/Delete/">
+      </item>
+    </item>
+    <item id="M9" name="标签管理" url="~/Tag/">
+      <item id="F25" name="标签列表" url="~/Tag/">
+      </item>
+      <item id="F26" name="添加标签" url="~/Tag/New/">
+      </item>
+      <item id="F27" name="修改标签" url="~/Tag/Modify/">
+      </item>
+      <item id="F28" name="删除标签" url="~/Tag/Delete/">
+      </item>
+      <item id="F29" name="备份标签" url="~/Tag/Copy/">
+      </item>
+    </item>
+  </item>
+  <item id="M5" name="人员管理" url="">
+    <item id="M6" name="管理员管理" url="~/Admin/">
+      <item id="F4" name="管理员列表" url="~/Admin/">
+      </item>
+      <item id="F5" name="添加管理员" url="~/Admin/new/">
+      </item>
+      <item id="F6" name="修改管理员" url="~/Admin/modify/">
+      </item>
+      <item id="F7" name="删除管理员" url="~/Admin/Delete/">
+      </item>
+      <item id="F8" name="角色分配" url="~/Admin/Role/">
+      </item>
+      <item id="F9" name="修改密码" url="~/Admin/PasswordEdit/">
+      </item>
+      <item id="F10" name="修改个人信息" url="~/Admin/SelfEdit/">
+      </item>
+      <item id="F16" name="查看管理员" url="~/Admin/PreView/">
+      </item>
+    </item>
+    <item id="M7" name="角色管理" url="~/Role/">
+      <item id="F11" name="角色列表" url="~/Role/">
+      </item>
+      <item id="F12" name="添加角色" url="~/Role/New/">
+      </item>
+      <item id="F13" name="修改角色" url="~/Role/Modify/">
+      </item>
+      <item id="F14" name="删除角色" url="~/Role/Delete/">
+      </item>
+      <item id="F15" name="权限分配" url="~/Role/Permission/">
+      </item>
+      <item id="F17" name="查看角色" url="~/Role/PreView/">
+      </item>
+    </item>
+    <item id="M20" name="用户管理" url="~/User/">
+      <item id="F58" name="用户列表" url="~/User/">
+      </item>
+      <item id="F59" name="添加用户" url="~/User/New/">
+      </item>
+      <item id="F60" name="修改用户" url="~/User/Modify/">
+      </item>
+      <item id="F61" name="删除用户" url="~/User/Delete/">
+      </item>
+      <item id="F66" name="查看用户" url="~/User/PreView/">
+      </item>
+    </item>
+    <item id="M21" name="用户组管理" url="~/Group/">
+      <item id="F62" name="用户组列表" url="~/Group/">
+      </item>
+      <item id="F63" name="添加用户组" url="~/Group/New/">
+      </item>
+      <item id="F64" name="修改用户组" url="~/Group/Modify/">
+      </item>
+      <item id="F65" name="删除用户组" url="~/Group/Delete/">
+      </item>
+      <item id="F67" name="查看用户组" url="~/Group/PreView/">
+      </item>
+    </item>
+  </item>
+  <item id="M27" name="模型管理" url="">
+    <item id="M28" name="用户模型管理" url="~/UserModel/">
+      <item id="F78" name="用户模型列表" url="~/UserModel/">
+      </item>
+      <item id="F79" name="添加用户模型" url="~/UserModel/New/">
+      </item>
+      <item id="F80" name="修改用户模型" url="~/UserModel/Modify/">
+      </item>
+      <item id="F81" name="删除用户模型" url="~/UserModel/Delete/">
+      </item>
+      <item id="F82" name="查看用户模型" url="~/UserModel/PreView/">
+      </item>
+    </item>
+    <item id="M38" name="任务模型管理" url="~/TaskModel/">
+      <item id="F117" name="任务模型列表" url="~/TaskModel/">
+      </item>
+      <item id="F118" name="添加任务模型" url="~/TaskModel/New/">
+      </item>
+      <item id="F119" name="修改任务模型" url="~/TaskModel/Modify/">
+      </item>
+      <item id="F120" name="删除任务模型" url="~/TaskModel/Delete/">
+      </item>
+      <item id="F121" name="查看任务模型" url="~/TaskModel/PreView/">
+      </item>
+    </item>
+  </item>
+  <item id="M34" name="任务管理" url="">
+    <item id="M36" name="各组任务" url="~/GroupTask/">
+      <item id="F107" name="各组任务列表" url="~/GroupTask/">
+      </item>
+      <item id="F108" name="添加各组任务" url="~/GroupTask/New/">
+      </item>
+      <item id="F109" name="修改各组任务" url="~/GroupTask/Modify/">
+      </item>
+      <item id="F110" name="删除各组任务" url="~/GroupTask/Delete/">
+      </item>
+      <item id="F111" name="查看各组任务" url="~/GroupTask/Preview/">
+      </item>
+    </item>
+    <item id="M37" name="固定任务" url="~/RegularTask/">
+      <item id="F112" name="固定任务列表" url="~/RegularTask/">
+      </item>
+      <item id="F113" name="添加固定任务" url="~/RegularTask/New/">
+      </item>
+      <item id="F114" name="修改固定任务" url="~/RegularTask/Modify/">
+      </item>
+      <item id="F115" name="删除固定任务" url="~/RegularTask/Delete/">
+      </item>
+      <item id="F116" name="查看固定任务" url="~/RegularTask/PreView/">
+      </item>
+    </item>
+  </item>
+  <item id="M40" name="仪器管理" url="~/Device/">
+      <item id="M41" name="仪器列表" url="~/Device/">
+        <item id="F127" name="查看仪器列表" url="~/Device/">
+        </item>
+        <item id="F128" name="添加仪器" url="~/Device/New/">
+        </item>
+        <item id="F129" name="修改仪器信息" url="~/Device/Modify/">
+        </item>
+        <item id="F130" name="删除仪器" url="~/Device/Delete/">
+        </item>     
+      </item>     
+    </item>
+  <item id="M44" name="预约管理" url="~/Reservation/">
+    <item id="M45" name="预约信息列表" url="~/Reservation/">
+      <item id="F132" name="查看预约信息列表" url="~/Reservation/">
+      </item>
+      <item id="F133" name="添加预约信息" url="~/Reservation/New/">
+      </item>
+      <item id="F134" name="修改预约信息" url="~/Reservation/Modify/">
+      </item>
+      <item id="F135" name="删除预约信息" url="~/Reservation/Delete/">
+      </item>
+    </item>
+  </item>
+</tree>

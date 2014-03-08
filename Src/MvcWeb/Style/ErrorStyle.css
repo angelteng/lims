@@ -1,0 +1,27 @@
+﻿body 
+{
+	font-family:"宋体","Arial";
+	font-size:14px;
+	line-height:1.5;
+}
+.wrap
+{
+	width:700px;
+	margin:0 auto;	
+}
+.wrap .pic img
+{
+	margin-right:8px;
+}
+.wrap .pic span
+{
+	font-size:18px;
+	font-weight:bold;
+	position:absolute;
+	top:50px;
+}
+
+.wrap .detail
+{
+	margin-top:10px;
+}

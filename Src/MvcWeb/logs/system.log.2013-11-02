@@ -1,0 +1,175 @@
+----------log begin---------- 
+2013-11-02 00:48:10,517 [3] ERROR NHibernate.Util.ReflectHelper 
+ - Could not load type Hope.CMS.Model.OrgUserDetailed, Hope.CMS.Model. 
+System.TypeLoadException: 未能从程序集“Hope.CMS.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”中加载类型“Hope.CMS.Model.OrgUserDetailed”。
+   在 System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   在 System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   在 NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Util\ReflectHelper.cs:行号 293
+
+2013-11-02 00:48:10,574 [3] ERROR NHibernate.Cfg.Configuration 
+ - Could not compile the mapping document: D:\Work\DotNet\Project\CMS\Src\MvcWeb\App_Data\Mapping\Org_UserDetailed.xml 
+NHibernate.MappingException: Could not compile the mapping document: D:\Work\DotNet\Project\CMS\Src\MvcWeb\App_Data\Mapping\Org_UserDetailed.xml ---> NHibernate.MappingException: persistent class Hope.CMS.Model.OrgUserDetailed, Hope.CMS.Model not found ---> System.TypeLoadException: 未能从程序集“Hope.CMS.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”中加载类型“Hope.CMS.Model.OrgUserDetailed”。
+   在 System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   在 System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   在 NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Util\ReflectHelper.cs:行号 308
+   在 NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\XmlHbmBinding\Binder.cs:行号 99
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\XmlHbmBinding\Binder.cs:行号 105
+   在 NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\XmlHbmBinding\ClassBinder.cs:行号 38
+   在 NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\XmlHbmBinding\RootClassBinder.cs:行号 21
+   在 NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\XmlHbmBinding\MappingRootBinder.cs:行号 42
+   在 NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\XmlHbmBinding\MappingRootBinder.cs:行号 29
+   在 NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Cfg\Configuration.cs:行号 523
+   --- 内部异常堆栈跟踪的结尾 ---
+
+2013-11-02 00:48:10,577 [3] ERROR Log4NetHope.LogBase 
+ - Could not compile the mapping document: D:\Work\DotNet\Project\CMS\Src\MvcWeb\App_Data\Mapping\Org_UserDetailed.xml 
+----------log end---------- ----------log begin---------- 
+2013-11-02 00:51:13,865 [13] ERROR NHibernate.Event.Default.AbstractFlushingEventListener 
+ - Could not synchronize database state with session 
+NHibernate.PropertyValueException: Error dehydrating property value for Hope.CMS.Model.OrgUser.Extend ---> System.InvalidCastException: 无法将类型为“System.Collections.Generic.Dictionary`2[System.String,System.String]”的对象强制转换为类型“System.Xml.XmlDocument”。
+   在 Hope.CMS.DAL.XmlDocumentProxy.NullSafeSet(IDbCommand cmd, Object value, Int32 index) 位置 D:\Work\DotNet\Project\CMS\Src\DAL\Proxy\XmlDocumentProxy.cs:行号 129
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Dehydrate(Object id, Object[] fields, Object rowId, Boolean[] includeProperty, Boolean[][] includeColumns, Int32 table, IDbCommand statement, ISessionImplementor session, Int32 index) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2410
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Dehydrate(Object id, Object[] fields, Object rowId, Boolean[] includeProperty, Boolean[][] includeColumns, Int32 table, IDbCommand statement, ISessionImplementor session, Int32 index) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2414
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Update(Object id, Object[] fields, Object[] oldFields, Object rowId, Boolean[] includeProperty, Int32 j, Object oldVersion, Object obj, SqlCommandInfo sql, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2821
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.UpdateOrInsert(Object id, Object[] fields, Object[] oldFields, Object rowId, Boolean[] includeProperty, Int32 j, Object oldVersion, Object obj, SqlCommandInfo sql, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2702
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Update(Object id, Object[] fields, Int32[] dirtyFields, Boolean hasDirtyCollection, Object[] oldFields, Object oldVersion, Object obj, Object rowId, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3007
+   在 NHibernate.Action.EntityUpdateAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityUpdateAction.cs:行号 79
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Engine.ActionQueue.ExecuteActions(IList list) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 125
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 171
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+
+2013-11-02 00:51:13,916 [13] ERROR Log4NetHope.LogBase 
+ - Hope.CMS.Model.OrgUser 
+NHibernate.PropertyValueException: Error dehydrating property value for Hope.CMS.Model.OrgUser.Extend ---> System.InvalidCastException: 无法将类型为“System.Collections.Generic.Dictionary`2[System.String,System.String]”的对象强制转换为类型“System.Xml.XmlDocument”。
+   在 Hope.CMS.DAL.XmlDocumentProxy.NullSafeSet(IDbCommand cmd, Object value, Int32 index) 位置 D:\Work\DotNet\Project\CMS\Src\DAL\Proxy\XmlDocumentProxy.cs:行号 129
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Dehydrate(Object id, Object[] fields, Object rowId, Boolean[] includeProperty, Boolean[][] includeColumns, Int32 table, IDbCommand statement, ISessionImplementor session, Int32 index) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2410
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Dehydrate(Object id, Object[] fields, Object rowId, Boolean[] includeProperty, Boolean[][] includeColumns, Int32 table, IDbCommand statement, ISessionImplementor session, Int32 index) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2414
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Update(Object id, Object[] fields, Object[] oldFields, Object rowId, Boolean[] includeProperty, Int32 j, Object oldVersion, Object obj, SqlCommandInfo sql, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2821
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.UpdateOrInsert(Object id, Object[] fields, Object[] oldFields, Object rowId, Boolean[] includeProperty, Int32 j, Object oldVersion, Object obj, SqlCommandInfo sql, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 2702
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Update(Object id, Object[] fields, Int32[] dirtyFields, Boolean hasDirtyCollection, Object[] oldFields, Object oldVersion, Object obj, Object rowId, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3007
+   在 NHibernate.Action.EntityUpdateAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityUpdateAction.cs:行号 79
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Engine.ActionQueue.ExecuteActions(IList list) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 125
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 171
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 253
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 1497
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Transaction\AdoTransaction.cs:行号 190
+   在 Hope.CMS.DAL.BaseDAL`1.Edit(T entity) 位置 D:\Work\DotNet\Project\CMS\Src\DAL\BaseDAL.cs:行号 66
+----------log end---------- ----------log begin---------- ----------log end---------- ----------log begin---------- ----------log end---------- ----------log begin---------- ----------log end---------- ----------log begin---------- 
+2013-11-02 01:02:50,780 [15] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Invocation of method 'get_Item' in  System.Collections.Generic.Dictionary`2[System.String,System.String] threw exception System.Collections.Generic.KeyNotFoundException : 给定关键字不在字典中。   在 NVelocity.Runtime.Parser.Node.ASTMethod.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTIfStatement.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.VelocimacroProxy.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.Foreach.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Template.Merge(IContext context, TextWriter writer)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\DotNet\Project\CMS\Src\TemplateHandler\VelocityHelper.cs:行号 151 
+----------log end---------- ----------log begin---------- 
+2013-11-02 01:03:22,337 [7] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Invocation of method 'get_Item' in  System.Collections.Generic.Dictionary`2[System.String,System.String] threw exception System.Collections.Generic.KeyNotFoundException : 给定关键字不在字典中。   在 NVelocity.Runtime.Parser.Node.ASTMethod.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTIfStatement.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.VelocimacroProxy.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.Foreach.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Template.Merge(IContext context, TextWriter writer)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\DotNet\Project\CMS\Src\TemplateHandler\VelocityHelper.cs:行号 151 
+
+2013-11-02 01:04:24,219 [6] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Invocation of method 'get_Item' in  System.Collections.Generic.Dictionary`2[System.String,System.String] threw exception System.Collections.Generic.KeyNotFoundException : 给定关键字不在字典中。   在 NVelocity.Runtime.Parser.Node.ASTMethod.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTIfStatement.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.VelocimacroProxy.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.Foreach.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Template.Merge(IContext context, TextWriter writer)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\DotNet\Project\CMS\Src\TemplateHandler\VelocityHelper.cs:行号 151 
+----------log end---------- ----------log begin---------- 
+2013-11-02 01:15:22,591 [7] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered ")" at line 23, column 97.
+Was expecting one of:
+    "[" ...
+    "(" ...
+    <WHITESPACE> ...
+    <STRING_LITERAL> ...
+    "true" ...
+    "false" ...
+    "!" ...
+    <NUMBER_LITERAL> ...
+    <IDENTIFIER> ...
+    "{" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\DotNet\Project\CMS\Src\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-11-02 01:18:46,671 [8] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Encountered "#elseif" at line 12, column 1.
+Was expecting one of:
+    "(" ...
+    <RPAREN> ...
+    <ESCAPE_DIRECTIVE> ...
+    <SET_DIRECTIVE> ...
+    "\\\\" ...
+    "\\" ...
+    <TEXT> ...
+    <SINGLE_LINE_COMMENT> ...
+    "*#" ...
+    "*#" ...
+    <STRING_LITERAL> ...
+    <END> ...
+    "if" ...
+    "stop" ...
+    <NUMBER_LITERAL> ...
+    <WORD> ...
+    <IDENTIFIER> ...
+    <DOT> ...
+    "{" ...
+    "}" ...
+       在 NVelocity.Template.Process()
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.LoadResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.Resource.ResourceManagerImpl.GetResource(String resourceName, ResourceType resourceType, String encoding)
+   在 NVelocity.Runtime.RuntimeInstance.GetTemplate(String name, String encoding)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\DotNet\Project\CMS\Src\TemplateHandler\VelocityHelper.cs:行号 116 
+
+2013-11-02 01:22:13,385 [11] FATAL Log4NetHope.LogBase 
+ - BuildTemplate：Invocation of method 'get_Item' in  System.Collections.Generic.Dictionary`2[System.String,System.String] threw exception System.Collections.Generic.KeyNotFoundException : 给定关键字不在字典中。   在 NVelocity.Runtime.Parser.Node.ASTMethod.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTIfStatement.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.VelocimacroProxy.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.Foreach.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Template.Merge(IContext context, TextWriter writer)
+   在 Hope.TemplateUtil.VelocityHelper.BuildTemplate(String temFile) 位置 D:\Work\DotNet\Project\CMS\Src\TemplateHandler\VelocityHelper.cs:行号 151 
+----------log end---------- ----------log begin---------- ----------log end---------- ----------log begin---------- ----------log end---------- ----------log begin---------- ----------log end---------- 

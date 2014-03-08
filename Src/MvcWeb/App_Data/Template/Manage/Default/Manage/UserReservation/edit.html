@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--修改预约信息</title>
+#parse("HeadPage.html")
+#if($SavePermission)
+    <!--可选：表单输入验证-->
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.validate.methods.js"></script> 
+#end
+</head>
+<body>
+<form id="frmInput" method="post">
+    <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmnamedle" wnameth="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}Reservation">预约管理</a> >> 修改预约
+        </div>
+	</div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+    <div class="m">
+        <div class="contentInfo">
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="UserID" id="txtUserID" class="normalinput" value="${Entity.UserID}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="UserType" id="txtUserType" class="normalinput" value="${Entity.UserType}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="TestContent" id="txtTestContent" class="normalinput" value="${Entity.TestContent}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="BeginTIme" id="txtBeginTIme" class="normalinput" value="${Entity.BeginTIme}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="EndTime" id="txtEndTime" class="normalinput" value="${Entity.EndTime}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="SampleCount" id="txtSampleCount" class="normalinput" value="${Entity.SampleCount}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="ReservationType" id="txtReservationType" class="normalinput" value="${Entity.ReservationType}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="DeviceID" id="txtDeviceID" class="normalinput" value="${Entity.DeviceID}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><input type="text" name="Price" id="txtPrice" class="normalinput" value="${Entity.Price}"/></dd>
+		</dl>
+        <dl>
+            <dt> </dt>
+            <dd><textarea name="Remark" rows="3" cols="20" class="normalinput" style="width: 60%;height:100px;">${Entity.Remark}</textarea></dd>
+		</dl>
+		
+		<div class="btnArea">
+			#if($SavePermission)<input type="submit" class="ActionButton" value="保存"/>#end
+			<input type="button" class="ActionButton" onclick="window.history.back()" value="返回"/>
+		</div>
+	</div>
+    </div>
+    <!--End : 表格列表-->
+    </div>
+	<input type="hidden" value="$Entity.ID" name="ID" />
+  </form>
+  #if($SavePermission)
+  <script type="text/javascript">
+      jQuery(document).ready(function () {
+          jQuery("#frmInput").validate({
+              submitHandler: function () {
+                  var url = "${HopeTag.InstallDir}Reservation/Save/";
+                  var pars = jQuery('#frmInput').serialize();
+                  var myAjax = new jQuery.ajax({ url: url, type: 'post', data: pars, complete: ActionCompleteGo });
+              }
+          });
+      });
+  </script>
+  #end
+</body>
+</html>
+

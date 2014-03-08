@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF0670CD-6FE3-495D-BE02-E4191DA80759}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hope.ITMS.Model</RootNamespace>
+    <AssemblyName>Hope.ITMS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseData.cs" />
+    <Compile Include="Data\CommonField.cs" />
+    <Compile Include="Data\CommonModel.cs" />
+    <Compile Include="Data\DevDevice.cs" />
+    <Compile Include="Data\DevReservation.cs" />
+    <Compile Include="Data\OrgGroup.cs" />
+    <Compile Include="Data\OrgUser.cs" />
+    <Compile Include="Data\SysConfig.cs" />
+    <Compile Include="Data\SysMessage.cs" />
+    <Compile Include="Data\SysRole.cs" />
+    <Compile Include="Data\SysAdmin.cs" />
+    <Compile Include="Data\SysFunction.cs" />
+    <Compile Include="Data\SysLog.cs" />
+    <Compile Include="Data\SysModule.cs" />
+    <Compile Include="Data\SysPermission.cs" />
+    <Compile Include="Data\SysTag.cs" />
+    <Compile Include="Data\TaskTask.cs" />
+    <Compile Include="Data\TaskTaskHandler.cs" />
+    <Compile Include="Data\TaskTaskType.cs" />
+    <Compile Include="Data\UsrUser.cs" />
+    <Compile Include="Enum\CustomField_DataType.cs" />
+    <Compile Include="Enum\CustomField_InputType.cs" />
+    <Compile Include="Enum\FieldType.cs" />
+    <Compile Include="Enum\Frequency.cs" />
+    <Compile Include="Enum\Gender.cs" />
+    <Compile Include="Enum\ListType.cs" />
+    <Compile Include="Enum\ModelType.cs" />
+    <Compile Include="Enum\ObjectStatus.cs" />
+    <Compile Include="Enum\log.cs" />
+    <Compile Include="Enum\ParseEnums.cs" />
+    <Compile Include="Enum\ProgressType.cs" />
+    <Compile Include="Enum\SMSUserStatus.cs" />
+    <Compile Include="Enum\MessagetStatus.cs" />
+    <Compile Include="Enum\TaskPriority.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemID.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Virtual\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{8B424FC7-6502-478D-99DC-F9185A287530}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

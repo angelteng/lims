@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${HopeTag.SiteName} >> 管理员登录</title>  
+<link href="${HopeTag.InstallDir}Style/Login.css" rel="stylesheet" type="text/css" />   
+</head>
+<body>
+<div id="wrap">
+<div id="container">
+<!--<div class="logo"></div>-->
+<div class="frm">
+<div class="l"></div>
+<div class="m">
+<div class="mainArea">
+<div class="main_l">
+<div class="helpInfo"><h4>技术支持：</h4>E-mail: <a href="mailto:TechHelp@yeah.net">TechHelp@yeah.net</a></div>
+</div>
+<div class="main_r">
+<!--main info start-->
+<form id="loginform" action="" onsubmit="return CheckLogin();">
+<div class="loginTitle"></div>
+<ul>
+<li><input type="text" id="txtAccount" class="input_text" name="txtAccount" maxlength="20" value="用户名或手机号码" tabindex="1"/></li>
+<li><input id="showPwd" type="text" value="密码" tabindex="2" /> <input type="password" id="txtPassword" name="txtPassword" maxlength="20" value="" tabindex="2"/></li>
+#if($ValidateMode != "Off")                                
+<li><input id="txtValidatorCode" type="text" class="input_text" value="验证码" maxlength="6" tabindex="3"/>
+<img id="imgValidateCode" class="vImg" alt="看不清楚?请点击刷新" align="middle" title="看不清楚?点击刷新" onclick="ReloadValidateCode(this);" src="${HopeTag.InstallDir}Login/ValidateCode/" /></li>
+#end
+</ul>
+<!--main info over-->
+<div class="loginBtn"><input type="button" class="BtnLogin" value="" tabindex="4" id="btnLogin"/><span onclick="ShowPwdTip()">忘记密码?</span></div>
+</form>
+<div class="copInfo">©2012 Hope</div>
+</div>
+</div>
+<div class="mainBottom"></div>
+</div>
+<div class="r"></div>
+</div>
+</div>
+</div>
+<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery-1.4.4.min.js"></script>  
+<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/jquery.json-2.3.js"></script> 
+<script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/AdminLogin.js"></script> 
+<script language="javascript" type="text/javascript">
+currentDirPath = "${HopeTag.InstallDir}";
+function ShowPwdTip() {
+var tip = "为最大程度保护数据安全，系统不开放在线修改密码功能。\r\n\r\n请您通过以下途径找回密码：\r\n\r\n";
+tip += "通过电话联系研究中心管理员重设密码。\r\n";
+alert(tip);
+}
+</script>
+
+<div style="display:none;">
+<input type="hidden" id="hiBackUrl" value="${BackUrl}" />
+<input type="hidden" id="hiValidateMode" value="${ValidateMode}" />
+</div>
+</body>
+</html>

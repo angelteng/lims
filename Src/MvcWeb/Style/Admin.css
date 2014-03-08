@@ -1,0 +1,836 @@
+/* CSS Document */
+
+/*管理界面CSS文件，请勿与其他页面样式混用*/
+
+/*********************************************************************************************
+*
+* 复写HTML标签样式
+*
+*********************************************************************************************/
+body {
+		/*背景*/
+	background-color: #ffffff;
+		/*文字*/
+	font-size:14px;
+	font-family: Arial, Verdana, "宋体";
+	color: black;
+		/*盒子*/
+	margin:0;
+	padding:0;
+}
+* 
+{
+	/*文字*/
+	font-size:14px;
+	font-family: Arial, Verdana, "宋体";
+}
+ul,li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+input
+{
+	/*border:none;*/
+}
+.normalinput
+{
+    width:250px;
+    border:solid 1px #8aa372;
+    background:#fdfff5;
+    line-height:20px;
+    height:20px;
+    padding-left:3px;
+}
+textarea
+{
+    border:solid 1px #8aa372;
+    background:#fdfff5;
+    line-height:20px;
+    width:50%;
+}
+.inputl_g
+{    
+    width:70%;
+}
+
+html {
+	overflow-y:auto!important;
+	overflow-x:hidden;
+}
+a
+{
+	color:black;
+	text-decoration:none;
+	moz-outline-style: none;
+}
+img
+{
+	border:none;
+}
+sub,sup
+{
+    font-size:10px;
+}
+div#topAlertTips
+{
+    line-height:20px;
+    background:#1c9d52;
+    color:White;
+    padding:5px 20px;
+    display:none;
+    position:absolute;
+    top:135px;
+    left:45%;
+}
+div#topAlertTips.error
+{
+    background:#f09c52;
+}
+/*************************************
+*Top banner area style
+*************************************/
+#banner
+{
+	width:100%;
+	height:95px;
+	background:url(../Images/Admin/topBg.jpg) repeat-x;	
+}
+/*logo*/
+#banner h3
+{
+	height:95px;
+	float:left;
+	margin:0;
+}
+#banner #baner_R
+{
+	/*background:url(../Images/Admin/Top_R_Bg.jpg) no-repeat right;
+	height:95px;
+	width:330px;*/
+	float:right;
+}
+#banner #baner_R ul
+{
+	float:right;
+	margin-top:25px;
+	margin-right:15px;
+}
+#banner #baner_R li
+{
+	list-style:none;
+	text-align:center;
+	float:left;
+	width:100px;
+	cursor:pointer;
+}
+#banner #baner_R li img
+{
+    height:24px;
+    vertical-align:middle;
+    margin-right:3px;
+}
+/*login admin info*/
+#banner #baner_R .loginInfo
+{
+	position:absolute;
+	top:60px;
+	right:20px;	
+}
+
+/*********************************
+*Nav
+*********************************/
+#Nav
+{
+	/*background:url(../Images/Admin/NavBg.jpg) repeat-x;*/
+    background: #44C8EE;
+	width:100%;
+	height:35px;
+}
+#Nav ul
+{
+}
+
+/* 横向菜单样式 */
+#Nav ul li
+{
+	float:left; 
+	position:relative;
+	z-index:100;/*使菜单浮动在最上层*/
+	line-height:35px;	
+	width:125px;
+	text-align:center;
+}
+/*横向菜单字符颜色*/
+#Nav ul li a
+{
+	font-size:16px;
+	color:white;
+}
+
+/*显示下拉菜单*/
+#Nav .hover
+{
+	display:block;
+}
+
+/* 下拉菜单样式 */
+#Nav ul li ul {
+	display:none; 
+	margin:0;
+	margin-top:5px;
+	*margin-left:-95px;
+	position:absolute; 
+	top:30px; 
+	width:125px;
+	background:url(../Images/Admin/DropNav_bg.jpg) no-repeat top;
+	background-color:white;
+	border:solid 1px #ccc;
+	z-index:100;
+}
+/*菜单条目*/
+#Nav ul li ul li
+{
+	line-height:28px;	
+}
+/*菜单条目字符颜色*/
+#Nav ul li ul li a
+{
+	font-size:14px;
+	color:black;
+}
+#Nav ul li ul li a:hover
+{
+	text-decoration:underline;
+}
+
+/********************************
+*Bottom  版权与版本信息样式
+*********************************/
+#bottom
+{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	height:30px;
+	background:#eaeaea;
+	line-height:30px;
+	text-align:center;	
+	color:#555;
+}
+#bottom span
+{
+	color:#999;
+	position:absolute;
+	right:10px;
+	*margin-top:-8px;
+}
+
+/**********************************
+*
+*MainFrame 系统管理首页样式
+*
+***********************************/
+.Main_L
+{
+    width:40%;
+    float:left;
+}
+.Main_R
+{
+    width:60%;
+    float:left;
+}
+
+/*********首页搜索**********/
+.Main_L .indexSearch h3,.Main_L .indexMsg h3
+{
+    line-height:30px;
+    padding:0 10px;
+    margin:0;
+    background:#e5f5fb;
+}
+
+.Main_L .indexSearch
+{
+    height:265px;
+    background:#f8f8f8;
+    border:solid 1px #ccc;
+    margin-top:10px;
+    margin-right:10px;
+}
+.Main_L .indexSearch .t
+{
+    margin-top:20px;
+    text-align:center;
+}
+.Main_L .indexSearch ul
+{
+    margin:20px auto;
+    width:80%;
+}
+.Main_L .indexSearch ul li
+{
+    line-height:40px;
+    border-bottom:solid 1px #ccc;
+}
+.Main_L .indexSearch ul li span
+{
+    width:35%;
+    font-weight:bold;    
+    text-align:right;
+    display:inline-block;
+    padding-right:10px;
+}
+.Main_L .indexSearch ul li.btn
+{
+    border:none;
+    text-align:center;
+}
+/*********首页搜索 end**********/
+
+/*********首页短消息*************/
+.Main_L .indexMsg
+{
+    border:solid 1px #ccc;
+    margin-top:10px;
+    margin-right:10px;    
+}
+.Main_L .indexMsg span
+{
+    line-height:35px;
+    margin:15px;
+}
+.Main_L .indexMsg .DataDetail th
+{
+    background:#f6f6f6;
+}
+/*********首页短消息 end*************/
+
+.sysinfoTable
+{
+	font-size:12px;
+	windows:100%;
+	line-height:150%;
+	background-color:#f5f5f5;
+	border:1px  #BCBCBC solid;
+	border-bottom:none;
+	padding:1px;
+}
+
+.ItemName
+{
+	text-align:left;
+	width:27%;
+	padding-left:5px;
+	border-top:1px #FFFFFF solid;
+	border-bottom:1px #BCBCBC solid;
+	border-right:1px #BCBCBC solid;
+	border-left:1px #FFFFFF solid;
+}
+
+.ItemContent
+{
+	text-align:left;
+	width:73%;
+	padding-left:2px;
+	border-bottom:1px #BCBCBC solid;
+	border-top:1px #FFFFFF solid;
+	border-left:1px #FFFFFF solid;
+}
+/**********************************
+* 内页公用样式定义
+***********************************/
+#wrap
+{
+	margin:10px;
+	margin-right:0;
+	width:99%;
+}
+/**************************
+*顶部位置与功能导航
+**************************/
+.topNav
+{
+	margin:0;
+	padding:0;
+	background:#d5f6ff;
+	height:30px;
+	line-height:30px;
+	border:solid 1px #cccccc;
+}
+.topNav .l
+{
+	margin:0;
+	padding:0;
+	_padding-top:8px;
+}
+.topNav .l img
+{
+	margin-left:5px;
+}
+.topNav .r
+{
+	float:right;
+	clear:right;
+	_padding-top:5px;
+}
+.topNav .r ul
+{
+		/*显示*/
+	list-style-type:none;
+		/*定位*/
+	clear:both;
+	float:left;
+	margin:0;
+	padding:0;
+}
+.topNav .r ul li
+{
+	float:left;
+	display:inline;
+	margin-right:15px;
+	cursor:pointer;
+}
+.topNav .r ul li img
+{
+    vertical-align:middle;
+    margin-top:-3px;
+}
+/********************
+*列表样式
+********************/
+.m .m_list
+{
+	background-color:#b5d6e6;
+	margin:10px 0;
+	padding:0;
+}
+.m .m_list .m_list_t
+{
+	height:22px;
+}
+.m .m_list .m_list_t th
+{
+	/*background:url(../images/Admin/list_t_bg.gif) repeat-x;
+	background-color: #fff;*/
+    background: #B2F0FF;
+	margin:0;
+	padding:0;
+	text-align:center;
+	cursor:pointer;
+}
+.m .m_list .m_list_i td
+{
+	background-color: white;
+	padding:1px 5px;
+}
+.m .m_list .m_list_i td a
+{
+	color:Black;
+}
+.m .m_list .m_list_i td a:hover
+{
+	color:Red;
+}
+
+/********************
+*
+* 列表顶部查询
+*
+********************/
+.QueryBar
+{
+	background:#fffff9;
+	height:28px;
+	_height:20px;
+	border:solid 1px #cccccc;
+	line-height:30px;	
+	margin:10px 0;
+	padding:3px;
+	padding-left:10px;
+}
+
+/****************************************
+*
+* 添加、返回、保存等按钮定义
+*
+*****************************************/
+.btnArea
+{
+	margin:10px auto;
+	text-align:center;
+}
+.ActionButton
+{
+	/*background:url(../Images/Admin/BtnBg_Y.jpg) repeat-x;*/
+	background-color:#ffcc33;
+	border:solid 1px #ddcea5;
+	height:30px;
+	margin:10px;
+	cursor:pointer;
+	padding:0 5px;
+	letter-spacing:3px;
+}
+#btnSearch,.BatchDelete
+{
+    height:22px;
+    margin:3px;
+    padding:0 5px;
+}
+.back
+{
+  	background-color:#eee;
+	border:solid 1px #ccc;  
+}
+
+/****************************************
+*
+* 用户组、栏目列表、分类列表
+* 列表顶部导航
+*
+*****************************************/
+.RepColum
+{
+	background:#cdeaf9;
+	height:30px;
+	line-height:30px;
+	_height:20px;
+	margin:10px 0;
+	padding:0 5px;
+	_padding:5px;
+}
+.RepColum ul
+{
+	padding:0;
+	margin:0;	
+}
+.RepColum li 
+{
+	list-style:none;
+	display:inline;
+	color:#000;
+	margin-right:5px;
+}
+.RepColum li a
+{
+	color:#000;
+}
+.RepColum li a:visited
+{
+	color:#000;
+}
+
+/********************************************
+*
+*查看记录详细信息页面样式定义
+*
+*********************************************/
+.contentInfo
+{
+    margin-top:5px;	
+}
+.contentInfo dl
+{
+	border-bottom:solid 1px #eee;
+	min-height:30px;
+	margin:0;
+	line-height:30px;
+	display:block;
+	_display:inline-block;
+}
+.contentInfo dl dt
+{
+	font-weight:bold;
+	margin-top:2px;
+    _margin-top:10px;
+    width:15%;
+    float:left;
+    clear:left;
+    text-align:right;
+}
+.contentInfo dl dd
+{
+    _margin-top:10px;
+    margin-left:15%;
+    padding:2px 0 0 15px; 
+}
+.contentInfo dl dd p.tips
+{
+    display:inline;
+    margin-left:10px;
+    color:Gray;
+}
+/*.contentInfo dl dd input,dl dd textarea
+{
+	border:expression(this.type=="radio"||this.type=="checkbox" ? "none":"solid 1px #cccccc");
+	background:expression(this.type=="radio"||this.type=="checkbox" ? "none":"#fffef8");
+}
+*/
+/*添加订单时货品列表所用*/
+.contentInfo dl dd .proList
+{
+	margin-left:15%;
+}
+.contentInfo dl dd .proList .pCount
+{
+	padding-left:10px;
+}
+/****************************************
+*
+* 必填字段标识
+*
+*****************************************/
+.NeedEnter
+{
+	color:Red;
+}
+
+/******************************************
+*
+*系统配置样式定义
+*
+******************************************/
+.DataDetail
+{	
+	background:#eee;
+	width:100%;	
+}
+.DataDetail td,.DataDetail th
+{
+	background:white;
+	height:30px;
+	line-height:30px;
+	padding:0 5px;
+}
+.DataDetail tr.alter td
+{
+	/*background:#fcfff4;*/	
+}
+.DataDetail th
+{
+	background:#fbfce2;
+}
+.DataDetail td.title
+{
+	width:350px;
+	background:#effff5;
+}
+.DataDetail td span
+{
+	font-weight:normal;
+	line-height:1.2;
+}
+.DataDetail input
+{
+	/* 除IE6、7外，其它浏览器均不支持expression表达式 */
+	border:expression(this.type=="radio"||this.type=="checkbox" ? "none":"solid 1px #ccc");
+	/*background:expression(this.type=="radio"||this.type=="checkbox" ? "none":"#fffff9");*/
+}
+.DataDetail textarea
+{
+	border:solid 1px #ccc;
+}
+
+/**************************************
+*
+*上传控件
+*
+***************************************/
+.uploadControl
+{
+	margin:0;
+	height:28px;
+	background:#fff8dd;
+	width:35%;
+	float:left;
+	margin-left:10px;
+}
+/****************************************
+*
+* 分页样式
+*
+*****************************************/
+.pager {margin:8px 0;text-align:center;font-size:14px;line-height:100%;}
+.pager a {padding:4px 9px;border:solid 1px #898989;margin-right:3px;}
+.pager a.cur,.pager a:hover {background:#3ca99b;border-color:#3ca99b;color:#fff;}
+/*.pager a.np {padding:4px 9px;}*/
+.pager span.disablenp{background:#efefef;border:solid 1px #ccc;color:#000;padding:4px 9px;margin-right:3px;}
+.pager .TextBox {margin:0 4px;padding:4px;width:32px;border:solid 1px #898989;background:none;text-align:right;}
+.pager .Button {width:40px;border:solid 1px #898989;background:#e8e8e8;cursor:pointer;padding:4px 0; text-align:center;}
+
+
+/************jQuery.Validate插件样式开始********************/
+label.error
+{
+    background: url(../images/icon/error.png) no-repeat;
+    color: Red;
+    margin:0;
+    padding-left: 20px;
+    margin-left:5px;
+}
+input.error
+{
+    border: solid 1px red;
+    background:#fff4f5;
+}
+label.valid
+{
+    margin:0;
+    margin-left:5px; 
+    padding-left:20px; 
+    background:url(../images/icon/checked.gif) no-repeat;
+}
+/************jQuery.Validate插件样式结束********************/
+
+/****************角色分配********************/
+.Container
+{
+    margin:10px auto;
+}
+.Container li
+{
+    line-height:30px;
+}
+
+/****************tab********************/
+.Tab
+{
+    background:#f5f5f5;
+    border:solid 1px #ccc;
+    border-bottom:none;
+    margin-top:10px;
+    margin-bottom:0;
+    width:100%;	    
+}
+.Tab ul
+{
+    padding:0;
+    margin:0;
+}
+.Tab li
+{
+    display:inline;
+    list-style:none;
+    line-height:25px;
+    margin:0;
+    padding:3px 12px;
+    border-right:solid 1px #ccc;
+    cursor:pointer;
+}
+.Tab li.tab_active
+{
+    border-top:solid 1px #14678b;
+    background:#fff;
+    cursor:pointer;
+    padding-bottom:6px;
+}
+
+/********************************
+*
+*tab上方分类标题样式(例：患者查看页面)
+*
+*********************************/
+.viewTitle
+{
+    background:#fbfce2;
+    border:solid 1px #ccc;
+    border-bottom:none;
+    margin-top:10px;
+    margin-bottom:-10px;
+    width:100%;	  
+}
+.viewTitle span
+{
+    margin:0 15px;
+    font-weight:bold; 
+    line-height:28px;
+}
+/****************************
+*
+* 短消息 发件 收件人列表
+*
+****************************/
+.msgReceivers
+{    
+    float:left;
+    margin-left:1%;
+    width:38%;
+    margin-top:10px;
+    border:solid 1px #ccc;
+}
+.msgReceivers .Tab
+{
+    margin:0;
+    border:none;
+}
+.msgReceivers .receiverList ul
+{
+    padding:5px 10px;    
+    overflow:auto;
+    height:230px;
+    overflow-x:hidden;
+}
+.msgReceivers .receiverList ul li
+{
+    line-height:30px;   
+    margin:2px 0;
+    padding-left:5px;
+    cursor:pointer;
+}
+.msgReceivers .receiverList ul li:hover
+{
+    background:#efefef;
+}
+/***************************************
+*
+* 治疗过程 图例标识
+*
+***************************************/
+.processNote
+{
+    margin-top:20px;    
+}
+.processNote ul
+{
+    margin:0 auto;
+}
+.processNote li
+{
+    float:left;   
+    width:25%;
+    margin:0 3%;
+    height:180px;
+    line-height:150px;
+    background:#f8f8f8;
+    border:solid 1px #ccc;    
+     
+    font-weight:bold;
+    text-align:center;
+}
+.processNote li a
+{
+    height:100%;
+    display:block;
+    font-size:25px;   
+}
+.processNote li a:hover
+{
+    background:#d8f8dc;
+}
+.processNote li.active
+{
+    background:#e7ffea;
+    border:solid 1px #a2c9a2;
+}
+.processNote li span
+{
+    margin:0 auto;
+    display:block;
+    width:60%;
+    border-top:solid 1px #ccc;
+    line-height:35px;
+    margin-top:-60px;
+    font-weight:normal;
+}

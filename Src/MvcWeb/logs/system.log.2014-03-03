@@ -1,0 +1,1256 @@
+----------log begin---------- 
+2014-03-03 00:54:49,792 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 0:54:49 
+
+2014-03-03 00:55:49,860 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 0:55:49 
+
+2014-03-03 00:56:49,860 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 0:56:49 
+
+2014-03-03 00:57:01,023 [9] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:ec5be43a-f32b-4c7b-b2e7-9a823113b1b9
+
+2014-03-03 00:57:01,119 [9] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 00:57:01,122 [9] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 00:57:49,860 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 0:57:49 
+
+2014-03-03 00:58:49,862 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 0:58:49 
+
+2014-03-03 00:59:49,862 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 0:59:49 
+
+2014-03-03 01:00:49,863 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:00:49 
+
+2014-03-03 01:01:49,863 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:01:49 
+
+2014-03-03 01:02:49,864 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:02:49 
+
+2014-03-03 01:03:49,864 [13] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:03:49 
+----------log end---------- ----------log begin---------- 
+2014-03-03 01:04:13,587 [24] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:04:13 
+
+2014-03-03 01:05:13,610 [24] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:05:13 
+
+2014-03-03 01:06:13,611 [24] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:06:13 
+
+2014-03-03 01:07:13,612 [24] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:07:13 
+----------log end---------- ----------log begin---------- 
+2014-03-03 01:07:27,185 [17] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:07:27 
+
+2014-03-03 01:07:36,447 [20] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:a4c3584d-91a2-4190-981d-e7adbf149875
+
+2014-03-03 01:07:36,566 [20] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 01:07:36,689 [20] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 01:08:27,218 [17] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:08:27 
+
+2014-03-03 01:09:27,220 [17] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:09:27 
+
+2014-03-03 01:10:27,221 [17] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:10:27 
+
+2014-03-03 01:11:27,222 [17] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:11:27 
+----------log end---------- ----------log begin---------- 
+2014-03-03 01:12:10,080 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:12:10 
+
+2014-03-03 01:13:10,107 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:13:10 
+
+2014-03-03 01:14:10,107 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:14:10 
+
+2014-03-03 01:15:10,108 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:15:10 
+
+2014-03-03 01:16:10,108 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:16:10 
+
+2014-03-03 01:17:10,109 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:17:10 
+
+2014-03-03 01:18:10,109 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:18:10 
+
+2014-03-03 01:19:10,109 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:19:10 
+
+2014-03-03 01:20:10,110 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:20:10 
+
+2014-03-03 01:20:20,026 [38] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:cb80052d-102b-4eba-b7fe-ed3afb9cecc4
+
+2014-03-03 01:20:20,059 [38] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 01:20:20,061 [38] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 01:20:20,351 [38] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysAdmin 
+System.Data.SqlTypes.SqlTypeException: SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。
+   在 System.Data.SqlClient.TdsParser.TdsExecuteRPC(_SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource`1 completion, Int32 startRpc, Int32 startParam)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 87
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 413
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 397
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 171
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 1497
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Transaction\AdoTransaction.cs:行号 190
+   在 Hope.ITMS.DAL.BaseDAL`1.Edit(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 66
+
+2014-03-03 01:21:10,111 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:21:10 
+
+2014-03-03 01:22:10,111 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:22:10 
+
+2014-03-03 01:23:10,112 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:23:10 
+
+2014-03-03 01:24:10,113 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:24:10 
+
+2014-03-03 01:25:10,114 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:25:10 
+
+2014-03-03 01:26:10,114 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:26:10 
+
+2014-03-03 01:27:10,115 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:27:10 
+
+2014-03-03 01:28:10,117 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:28:10 
+
+2014-03-03 01:29:10,118 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:29:10 
+
+2014-03-03 01:30:10,119 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:30:10 
+
+2014-03-03 01:31:10,119 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:31:10 
+
+2014-03-03 01:32:10,120 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:32:10 
+
+2014-03-03 01:33:10,120 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:33:10 
+
+2014-03-03 01:34:10,120 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:34:10 
+
+2014-03-03 01:35:10,121 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:35:10 
+
+2014-03-03 01:36:10,122 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:36:10 
+
+2014-03-03 01:37:10,123 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:37:10 
+
+2014-03-03 01:38:10,123 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:38:10 
+
+2014-03-03 01:39:10,123 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:39:10 
+
+2014-03-03 01:40:10,124 [36] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 1:40:10 
+----------log end---------- ----------log begin---------- 
+2014-03-03 22:11:06,619 [11] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:11:06 
+
+2014-03-03 22:12:06,668 [11] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:12:06 
+----------log end---------- ----------log begin---------- 
+2014-03-03 22:12:13,839 [18] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:12:13 
+
+2014-03-03 22:13:13,879 [18] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:13:13 
+
+2014-03-03 22:14:13,880 [18] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:14:13 
+
+2014-03-03 22:15:13,881 [18] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:15:13 
+----------log end---------- ----------log begin---------- 
+2014-03-03 22:15:20,450 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:15:20 
+
+2014-03-03 22:16:20,478 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:16:20 
+
+2014-03-03 22:17:20,478 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:17:20 
+
+2014-03-03 22:18:20,479 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:18:20 
+
+2014-03-03 22:19:20,480 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:19:20 
+
+2014-03-03 22:20:20,481 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:20:20 
+
+2014-03-03 22:21:20,481 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:21:20 
+
+2014-03-03 22:22:20,481 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:22:20 
+
+2014-03-03 22:23:20,482 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:23:20 
+
+2014-03-03 22:24:20,483 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:24:20 
+
+2014-03-03 22:25:20,317 [27] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:87fe67cb-103e-4659-ab9e-4ae1840db12b
+
+2014-03-03 22:25:20,470 [27] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 22:25:20,501 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:25:20 
+
+2014-03-03 22:25:20,562 [27] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 22:25:21,283 [27] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysAdmin 
+System.Data.SqlTypes.SqlTypeException: SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。
+   在 System.Data.SqlClient.TdsParser.TdsExecuteRPC(_SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource`1 completion, Int32 startRpc, Int32 startParam)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   在 NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\SqlClientBatchingBatcher.cs:行号 87
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 413
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteBatch() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 397
+   在 NHibernate.Engine.ActionQueue.ExecuteActions() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 171
+   在 NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractFlushingEventListener.cs:行号 241
+   在 NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultFlushEventListener.cs:行号 20
+   在 NHibernate.Impl.SessionImpl.Flush() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 1497
+   在 NHibernate.Transaction.AdoTransaction.Commit() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Transaction\AdoTransaction.cs:行号 190
+   在 Hope.ITMS.DAL.BaseDAL`1.Edit(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 66
+
+2014-03-03 22:25:50,211 [31] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:87fe67cb-103e-4659-ab9e-4ae1840db12b
+
+2014-03-03 22:25:50,275 [31] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 22:25:50,366 [31] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 22:26:20,501 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:26:20 
+
+2014-03-03 22:27:20,502 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:27:20 
+
+2014-03-03 22:28:20,503 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:28:20 
+
+2014-03-03 22:29:20,504 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:29:20 
+
+2014-03-03 22:30:20,505 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:30:20 
+
+2014-03-03 22:31:20,506 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:31:20 
+
+2014-03-03 22:32:20,507 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:32:20 
+
+2014-03-03 22:33:20,508 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:33:20 
+
+2014-03-03 22:34:20,509 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:34:20 
+
+2014-03-03 22:35:20,509 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:35:20 
+
+2014-03-03 22:36:20,509 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:36:20 
+
+2014-03-03 22:37:20,510 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:37:20 
+
+2014-03-03 22:38:20,511 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:38:20 
+
+2014-03-03 22:39:20,511 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:39:20 
+
+2014-03-03 22:40:20,511 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:40:20 
+
+2014-03-03 22:41:20,512 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:41:20 
+
+2014-03-03 22:41:39,283 [47] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:e6526e95-cd0f-4c4d-88e7-cae52e81b729
+
+2014-03-03 22:41:39,283 [47] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 22:41:39,283 [47] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 22:41:58,002 [48] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:e6526e95-cd0f-4c4d-88e7-cae52e81b729
+
+2014-03-03 22:41:58,003 [48] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 22:41:58,003 [48] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 22:42:20,513 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:42:20 
+
+2014-03-03 22:43:20,514 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:43:20 
+
+2014-03-03 22:44:20,515 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:44:20 
+
+2014-03-03 22:45:20,516 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:45:20 
+
+2014-03-03 22:46:20,516 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:46:20 
+
+2014-03-03 22:47:20,517 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:47:20 
+
+2014-03-03 22:48:20,518 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:48:20 
+
+2014-03-03 22:49:20,519 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:49:20 
+
+2014-03-03 22:50:20,520 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:50:20 
+
+2014-03-03 22:51:20,521 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:51:20 
+
+2014-03-03 22:52:20,521 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:52:20 
+
+2014-03-03 22:53:20,522 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:53:20 
+
+2014-03-03 22:54:20,523 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:54:20 
+
+2014-03-03 22:55:20,523 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:55:20 
+
+2014-03-03 22:56:20,524 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:56:20 
+
+2014-03-03 22:57:20,525 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:57:20 
+
+2014-03-03 22:58:20,525 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:58:20 
+
+2014-03-03 22:59:20,526 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 22:59:20 
+
+2014-03-03 23:00:20,527 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:00:20 
+
+2014-03-03 23:01:20,527 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:01:20 
+
+2014-03-03 23:02:20,528 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:02:20 
+
+2014-03-03 23:03:20,529 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:03:20 
+
+2014-03-03 23:04:20,530 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:04:20 
+
+2014-03-03 23:05:20,530 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:05:20 
+
+2014-03-03 23:06:20,530 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:06:20 
+
+2014-03-03 23:07:20,532 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:07:20 
+
+2014-03-03 23:08:20,532 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:08:20 
+
+2014-03-03 23:09:20,533 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:09:20 
+
+2014-03-03 23:10:20,534 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:10:20 
+
+2014-03-03 23:11:20,534 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:11:20 
+
+2014-03-03 23:12:20,536 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:12:20 
+
+2014-03-03 23:13:20,536 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:13:20 
+
+2014-03-03 23:14:20,538 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:14:20 
+
+2014-03-03 23:15:20,538 [22] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:15:20 
+----------log end---------- ----------log begin---------- 
+2014-03-03 23:36:50,627 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:36:50 
+
+2014-03-03 23:37:50,653 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:37:50 
+
+2014-03-03 23:38:50,653 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:38:50 
+
+2014-03-03 23:39:50,654 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:39:50 
+
+2014-03-03 23:40:50,655 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:40:50 
+
+2014-03-03 23:41:50,655 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:41:50 
+
+2014-03-03 23:42:50,655 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:42:50 
+
+2014-03-03 23:43:41,053 [23] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:40543634-09e4-4070-9d07-3dea51137e0d
+
+2014-03-03 23:43:41,084 [23] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 23:43:41,087 [23] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 23:43:50,656 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:43:50 
+
+2014-03-03 23:44:07,109 [25] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:40543634-09e4-4070-9d07-3dea51137e0d
+
+2014-03-03 23:44:07,109 [25] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 23:44:07,109 [25] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+
+2014-03-03 23:44:50,656 [7] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:44:50 
+
+2014-03-03 23:44:58,521 [28] ERROR NHibernate.AdoNet.AbstractBatcher 
+ - Could not execute query: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); select SCOPE_IDENTITY() 
+System.Data.SqlClient.SqlException (0x80131904): 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 223
+ClientConnectionId:40543634-09e4-4070-9d07-3dea51137e0d
+
+2014-03-03 23:44:58,521 [28] ERROR NHibernate.Util.ADOExceptionReporter 
+ - 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。 
+
+2014-03-03 23:44:58,521 [28] ERROR Log4NetHope.LogBase 
+ - Hope.ITMS.Model.SysLog 
+NHibernate.Exceptions.GenericADOException: could not insert: [Hope.ITMS.Model.SysLog][SQL: INSERT INTO Sys_Log (Type, Priority, Title, Message, Timestamp, UserName, UserIP, Source, ScriptName, PostString) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()] ---> System.Data.SqlClient.SqlException: 列名 'Type' 无效。
+列名 'Priority' 无效。
+列名 'Title' 无效。
+列名 'Message' 无效。
+列名 'Timestamp' 无效。
+列名 'UserName' 无效。
+列名 'UserIP' 无效。
+列名 'Source' 无效。
+列名 'ScriptName' 无效。
+列名 'PostString' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\AdoNet\AbstractBatcher.cs:行号 247
+   在 NHibernate.Id.IdentityGenerator.InsertSelectDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\IdentityGenerator.cs:行号 74
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Id\Insert\AbstractReturningDelegate.cs:行号 54
+   在 NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Persister\Entity\AbstractEntityPersister.cs:行号 3035
+   在 NHibernate.Action.EntityIdentityInsertAction.Execute() 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Action\EntityIdentityInsertAction.cs:行号 75
+   在 NHibernate.Engine.ActionQueue.Execute(IExecutable executable) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Engine\ActionQueue.cs:行号 136
+   在 NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 259
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\AbstractSaveEventListener.cs:行号 119
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 162
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 148
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Event\Default\DefaultSaveOrUpdateEventListener.cs:行号 53
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 2661
+   在 NHibernate.Impl.SessionImpl.Save(Object obj) 位置 c:\Users\oskar.berggren\Documents\Projects\nhibernate-core-3\src\NHibernate\Impl\SessionImpl.cs:行号 485
+   在 Hope.ITMS.DAL.BaseDAL`1.Add(T entity) 位置 F:\资料\编程\ITMS_\ITMS\Src\DAL\BaseDAL.cs:行号 37
+----------log end---------- ----------log begin---------- 
+2014-03-03 23:45:03,832 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:45:03 
+
+2014-03-03 23:46:03,856 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:46:03 
+
+2014-03-03 23:47:03,857 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:47:03 
+
+2014-03-03 23:48:03,858 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:48:03 
+
+2014-03-03 23:49:03,858 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:49:03 
+
+2014-03-03 23:50:03,858 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:50:03 
+
+2014-03-03 23:51:03,858 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:51:03 
+
+2014-03-03 23:52:03,859 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:52:03 
+
+2014-03-03 23:53:03,860 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:53:03 
+
+2014-03-03 23:54:03,860 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:54:03 
+
+2014-03-03 23:55:03,861 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:55:03 
+
+2014-03-03 23:56:03,861 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:56:03 
+
+2014-03-03 23:57:03,862 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:57:03 
+
+2014-03-03 23:58:03,863 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:58:03 
+
+2014-03-03 23:59:03,864 [21] ERROR Log4NetHope.LogBase 
+ - thread is running……2014/3/3 23:59:03 
+----------log end---------- 

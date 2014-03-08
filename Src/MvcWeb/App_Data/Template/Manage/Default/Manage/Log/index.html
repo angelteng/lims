@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>--后台管理</title>
+#parse("HeadPage.html")
+    <script language="javascript" type="text/javascript">
+        currentDirPath = "${HopeTag.InstallDir}Log/";
+    #if($PermissionDelete)
+        //删除选定
+        function DeleteSelected() {
+            selectedIDList = GetSelectedIDList("cbID");
+            if (selectedIDList == "") {
+                alert("请选择需要删除的日志！");
+                return;
+            }
+            else {
+                handlerDelete(window.confirm("确认删除所选日志"));
+            }
+        }
+
+        //根据时间选择批量删除
+        function BatchDelete() {
+            selectedIDList = $("#ItemsCount").val();
+            if (selectedIDList == "0") {
+                alert("请选择需要删除的日志！");
+                return;
+            }
+            else {
+                handlerDelete(window.confirm("确认删除所选日志"));
+            }
+        }
+      #end  
+    </script>
+</head>
+<body>
+ <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+    #if($PermissionDelete)
+        <div class="r">
+	        <ul>
+		        <li onclick="DeleteSelected()">
+		            <a href="javascript:void(0);"><img src="${HopeTag.InstallDir}Images/Icon/cross.png" align="absmiddle" width="14" height="14" /></a>&nbsp;删除</a>
+		        </li>
+	        </ul>
+        </div>		  
+    #end      
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;<a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> 日志管理
+        </div>
+    </div>
+   <!--End : 顶部导航-->
+  	 <!--Begin : 表格列表-->
+     <div class="m">
+      <!--管理导航-->
+     <div class="RepColum">日志类别：${LogTypeHref}  </div>
+       
+       <table class="m_list" width="100%" border="0" cellpadding="0" cellspacing="1">
+            <tr class="m_list_t"> 
+            <th width="30"><input type="checkbox" id="cbID_All" name="cbID_All" value="0" onclick="ToggleChb();" /></th>
+            <th>日志标题</th>
+            <th style="width:80px;">类型</th>
+            <th style="width:35%;">访问地址</th>                    
+            <th style="width:100px;">操作时间</th>
+            <th style="width:80px;">IP地址</th>
+            <th style="width:80px;">操作用户</th>
+            <th style="width:80px;">操作</th>
+        </tr>
+        #foreach($ItemData in $EntityList)
+        <tr class="m_list_i" onmouseover="focusit(this);" onmouseout="blurit(this);">
+            <td align="center"><input type="checkbox" class="chkIds" id="cbID" name="cbID" value="$ItemData.ID" /></td>
+            <td><a href="${HopeTag.InstallDir}log/Preview/$ItemData.ID">$ItemData.Title</a></td>
+            <td align="center" style="width: 200px;">${HopeTag.GetLogTypeCN($ItemData.Type)}</td>
+            <td>$ItemData.ScriptName</td>
+            <td align="center">${HopeTag.FormatDateTime($ItemData.Timestamp)}</td>  
+            <td style="width:85px;">$ItemData.UserIP</td>  
+            <td align="center">$ItemData.UserName</td>              
+            <td align="center"><a href="${HopeTag.InstallDir}log/Preview/$ItemData.ID">查看</a></td>
+        </tr>
+        #end
+        </table>
+        ##########批量删除#############
+        #if($PermissionDelete)
+        <div class="QueryBar">
+            <strong>批量删除</strong>
+            <select id="ItemsCount">
+                <option value="0">请选择</option>
+                <option value="-7">一星期前的</option>
+                <option value="-30">一个月前的</option>
+                <option value="-365">一年前的</option>
+                <option value="-1">所有</option>
+            </select>
+            <strong>日志</strong>
+            <input type="button" value="执行操作" class="ActionButton BatchDelete" onclick="BatchDelete()" />                 
+        </div>
+        #end
+        ###########################
+    </div>
+    #parse("Pager.html")
+</div>
+</body>
+</html>

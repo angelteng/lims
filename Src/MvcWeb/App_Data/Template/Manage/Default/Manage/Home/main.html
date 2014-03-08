@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>${HopeTag.SiteName}--后台管理</title>
+    #parse("HeadPage.html")
+</head>
+<body>
+ <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">	        
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;管理首页
+        </div>
+    </div>
+   <!--End : 顶部导航-->
+   <!--Begin : 表格列表-->
+   <div class="m">
+        <!--Begin: 左侧常用功能-->
+        <div class="Main_L">
+            <!---Begin:Search-->
+            <div class="indexSearch">
+                 <h3>患者资料查询</h3>
+                <div class="t"><img src="${HopeTag.InstallDir}Images/Admin/patientSearch.gif" alt="" /></div>
+                    <ul>
+                        <li><span>查询方法</span>
+                        <select id="ddlSearchField" name="ddlSearchField" class="normalinput" style="width:150px;">
+                            <option value="ShortName">姓名拼音首字母</option>
+                            <option value="Name">姓名</option>
+                            <option value="SN">纳入顺序号</option>
+                            <option value="RandomNo">随机号</option>
+                        </select>
+                        </li>                    
+                        <li><span>关键词</span>
+                        <input type="text" id="txtSearchKey" class="normalinput" style="width:150px;" /></li>
+                        <li class="btn"><input type="submit" class="ActionButton" value="确认查询" onclick="showSearchResult();"/></li>
+                   </ul>
+                </div>
+             <!---End:Search-->  
+             <!--Begin:Message-->
+             <div class="indexMsg">
+                <h3>我的短消息</h3>
+                #set($list=$MessageEntityList)
+                    #if($list.Count==0)
+                        <span>收件箱暂无短消息！</span>
+                   #else                   
+                  <table class="DataDetail" width="100%" border="0" cellpadding="0" cellspacing="1">
+                    <tr> 
+                        <th style="width:120px;">发件人</th>
+                        <th>标题</th>
+                        <th style="width:80px;">时间</th>
+                    </tr>
+                    #foreach($ItemData in $list)
+                    #if($velocityCount < 6)
+                    <tr onmouseover="focusit(this);" onmouseout="blurit(this);">
+                        <td align="center"><a href="${HopeTag.InstallDir}Message/Preview/${ItemData.ID}">${HopeTag.GetAdminName(${ItemData.Creator})}</a></td>
+                        <td><a href="${HopeTag.InstallDir}Message/Preview/${ItemData.ID}">${ItemData.Title}</a></td>           
+                        <td align="center">${HopeTag.FormatDateTime(${ItemData.CreatTime})}</td>
+                    </tr>
+                    #end
+                    #end
+                #end
+                </table> 
+             </div>
+             <!--End:Message-->
+            </div>
+        <!--End: 左侧常用功能-->
+        <!--Begin: 右侧统计图表-->
+        <div class="Main_R">
+            <div id="linecontainer" style="height:300px;"></div>
+            <div style="margin-top:20px;height:250px; width:50%; float:left;" id="piecontainer_l"></div>
+            <div style="margin-top:20px;height:250px; width:50%; float:left;" id="piecontainer_r"></div>             
+         </div>
+        <!--End: 右侧统计图表-->
+        
+     </div>        
+   </div>
+     
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/chart/highcharts.js"></script>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/chart/MainIndex.js"></script>
+    <script language="javascript" type="text/javascript">
+        currentDirPath = "${HopeTag.InstallDir}";
+
+        function showSearchResult() {
+            var key = $("#ddlSearchField").val();
+            var value = $("#txtSearchKey").val();
+            var isblur = $("#blurSearch").attr("checked");
+
+            if (value != "" && CheckString(value)) {
+                LinkPage(currentDirPath+"Patient/?k=" + key + "&v=" + value + "&IsBlur=true");
+            }
+            else {
+                alert("请正确输入关键词");
+            }
+        }
+    </script>
+</body>
+</html>

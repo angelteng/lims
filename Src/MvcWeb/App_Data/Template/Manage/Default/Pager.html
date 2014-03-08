@@ -1,0 +1,32 @@
+﻿#macro(RenderPage $CurrentPage)
+    <a #if($Pager.CurrentPage == $CurrentPage) class="cur" #else href="javascript:GotoPage($CurrentPage);" #end>$CurrentPage</a>
+#set ($CurrentPage = $CurrentPage + 1)
+#if($CurrentPage <= $Pager.TotalPage)
+#RenderPage($CurrentPage)
+#end
+#end
+
+#if($Pager.TotalPage>1)  ##只有一页时不显示
+<div class="pager c_b">
+#if ($Pager.CurrentPage > 1)
+#set( $PreviousPage = $Pager.CurrentPage - 1)
+        <a class="np" href="javascript:GotoPage($PreviousPage);"><</a> 
+#end
+
+#RenderPage(1)
+
+#if ($Pager.CurrentPage < $Pager.TotalPage && $Pager.TotalPage > 1)
+#set( $NextPage = $Pager.CurrentPage + 1)
+        <a class="np" href="javascript:GotoPage($NextPage);">></a> 
+#end
+
+    &nbsp;每页显示<input name="txtPageSize" type="text" value="$Pager.PageSize" id="pager_txtPageSize" class="TextBox" onblur="CheckPageNumeric(this,'hiDefaultPageSize');" onkeypress="EnterKey(event);" style="width: 30px;" />条/共有${Pager.TotalRecord}条 
+    共$Pager.TotalPage页 到第<input name="Page" id="pager_txtPage" type="text" class="TextBox" value="$Pager.CurrentPage" onblur="CheckPageNumeric(this,'hiDefaultCurrentPage');" onkeypress="EnterKey(event);" style="width: 30px;" />页
+    <input name="btnPage" type="button" id="pager_btnPage" class="Button" value="确定" onclick="GotoPage($('#pager_txtPage').val());" />
+</div>
+<div>
+    <input type="hidden" id="hiDefaultCurrentPage" value="${Pager.CurrentPage}" />
+    <input type="hidden" id="hiDefaultPageSize" value="${Pager.PageSize}" />
+    <input type="hidden" id="txtPagerUrl" value="${PagerUrl}" />
+</div>
+#end

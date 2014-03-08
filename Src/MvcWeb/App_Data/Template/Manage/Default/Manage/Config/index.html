@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--系统配置</title>
+    #parse("HeadPage.html")		    	
+</head>
+<body>
+ <form id="formInput" method="post" action="${HopeTag.InstallDir}config/Save">
+       <div id="wrap">
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--><a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> 参数配置
+        </div>
+    </div>
+	<!--End : 顶部导航-->
+  	<!--Begin : 表格列表-->
+     <div class="m">
+            <div class="Tab">
+                <ul id="Tab">
+                    <li class="tab_active" lang="container_1" title="基本信息">基本信息</li>
+                    <li lang="container_2" title="上传选项">上传选项</li>
+                    <li lang="container_3" title="短信配置">短信配置</li>
+                    <li lang="contain_04" title="邮件配置">邮件配置</li>
+                </ul>        
+            </div>
+            
+        <div class="Info">
+            <!--Contain_01 begin-->
+            <table cellpadding="0" cellspacing="1" class="DataDetail" id="container_1">
+                <tr>
+                    <th>参数说明</th>
+                    <th>参数值</th>
+                    <th width="150">变量名</th>
+                </tr>
+                <tr>
+                    <td class="title">系统名称：</td>
+                    <td><input type="text" id="txtSiteName" name="SiteName" value="$Entity.SiteName" class="normalinput inputl_g"/></td>
+                    <td>SiteName</td>
+                </tr>       
+                <tr class="alter">
+                    <td class="title">访问地址：</td>
+                    <td><input type="text" id="txtSiteUrl" name="SiteUrl" value="$Entity.SiteUrl" class="normalinput inputl_g" /></td>
+                    <td>SiteUrl</td>
+                </tr>         
+                <tr>
+                    <td class="title">系统LOGO<span>(405px*108px)</span>：</td>
+                    <td><input id="txtSiteLogo" name="SiteLogo" class="normalinput inputl_g" value="$Entity.SiteLogo" type="text" /></td>
+                    <td>SiteLogo</td>
+                </tr>
+                <tr class="alter">
+                    <td class="title">ICP备案号：</td>
+                    <td><input id="txtSiteICPNum" name="SiteICPNum" class="normalinput inputl_g" value="$Entity.SiteICPNum" type="text" /></td>
+                    <td>SiteICPNum</td>
+                </tr>                                                 
+                <tr>
+                    <td class="title">版权信息：<br /><span>支持html</span></td>
+                    <td><textarea id="txtSiteCopyright" name="SiteCopyright" cols="20" class="normalinput inputl_g" style="height:100px;" rows="5">$Entity.SiteCopyright</textarea></td>
+                    <td>SiteCopyright</td>
+                </tr>
+                </table>
+                <!--Contain_01 over-->
+                 
+            <!--Contain_02 begin-->                
+            <table cellpadding="0" cellspacing="1" class="DataDetail" id="container_2" style="display:none;">
+                <tr>
+                    <th>参数说明</th>
+                    <th>参数值</th>
+                    <th width="150">变量名</th>
+                </tr> 
+                <tr class="alter">
+                    <td class="title">是否允许上传文件：</td>
+                    <td>                
+                    <table id="rblEnbleFileUpload" border="0">
+	                    <tr>
+		                    <td><input id="rblEnbleFileUpload_0" type="radio" name="EnbleFileUpload" value="True" #if($Entity.EnbleFileUpload) checked="checked"#end /><label for="rblEnbleFileUpload_0">是</label></td>
+                            <td><input id="rblEnbleFileUpload_1" type="radio" name="EnbleFileUpload" value="False" #if(!$Entity.EnbleFileUpload) checked="checked"#end/><label for="rblEnbleFileUpload_1">否</label></td>
+	                    </tr>
+                    </table>
+                    </td>
+                    <td>EnbleFileUpload</td>
+                </tr>                             
+                <tr>
+                    <td class="title">允许上传的最大文件大小：<br /><span>不超过40960KB，如需要上传更大的文件，请先修改web.config文件中配置httpRuntime的属性maxRequestLength</span></td>
+                    <td><input id="txtFileUploadMaxSize" name="FileUploadMaxSize" style="width:120px;" value="$Entity.FileUploadMaxSize" class="normalinput inputl_g"/> KB</td>
+                    <td>FileUploadMaxSize</td>
+                </tr>            
+                <tr class="alter">
+                    <td class="title">网站上传目录：</td>
+                    <td><input id="txtFileUploadDir" name="FileUploadDir" class="normalinput inputl_g" value="$Entity.FileUploadDir" type="text" /></td>
+                    <td>FileUploadDir</td>
+                </tr>         
+                <tr>
+                    <td class="title">允许上传的文件类型<br /><span>多种文件类型之间以“|”分隔</span></td>
+                    <td><input id="txtFileUploadType" name="FileUploadType" class="normalinput inputl_g" value="$Entity.FileUploadType" type="text" /></td>
+                    <td>FileUploadType</td>
+                </tr>         
+                <tr class="alter">
+                    <td class="title">上传文件目录规则：<br /><span><font color="#B70808">变量说明：</font><br />
+                    ${FileType}：文件类型<br />
+                    ${Year}：年份<br />
+                    ${Month}：月份<br />
+                    ${Day}：日期</span>
+                    </td>
+                    <td><input id="txtUploadFilePath" name="UploadFilePath" class="normalinput inputl_g" value="$Entity.UploadFilePath" type="text"/></td>
+                    <td>UploadFilePath</td>
+                </tr>                                                                                                  
+                <tr>
+                    <td class="title">上传文件名规则：<br /><span>
+                     <font color="#B70808">变量说明：</font><br />
+                    ${Origin}：原文件名<br />
+                    ${Year}：年份<br />
+                    ${Month}：月份<br />
+                    ${Day}：日期<br />
+                    ${Hour}：小时 <br />
+                    ${Minute}：分钟<br />
+                    ${Second}：秒 <br />
+                    ${Millisecond}：毫秒 <br />
+                    ${Random}：随机数</span></td>
+                    <td><input id="txtUploadFileName" name="UploadFileName" class="normalinput inputl_g" value="$Entity.UploadFileName" type="text"/></td>
+                    <td>UploadFileName</td>
+                </tr>    
+                <tr>
+                    <td class="title">下载文件缓存天数<br /></td>
+                    <td><input id="txtFileDeleteDelay" name="FileDeleteDelay" style="width:120px;" class="normalinput inputl_g" value="$Entity.FileDeleteDelay" type="text" /></td>
+                    <td>FileDeleteDelay</td>
+                </tr>                                                     
+            </table>
+            <!--Contain_02 over-->
+             
+            <!--Contain_03 begin-->
+            <table cellpadding="0" cellspacing="1" class="DataDetail" id="container_3" style="display:none;">
+                <tr>
+                    <th>参数说明</th>
+                    <th>参数值</th>
+                    <th width="150">变量名</th>
+                </tr>
+                <tr class="alter">
+                    <td class="title">短信开关：</td>
+                    <td>
+                    <table id="rblEnbleSMS" border="0">
+	                    <tr>
+		                    <td><input id="rblEnbleSMS_0" type="radio" name="EnbleSMS" value="true" #if($Entity.EnbleSMS) checked="checked"#end /><label for="rblEnbleSMS_0">开</label></td>
+                            <td><input id="rblEnbleSMS_1" type="radio" name="EnbleSMS" value="false" #if(!$Entity.EnbleSMS) checked="checked"#end/><label for="rblEnbleSMS_1">关</label></td>
+	                    </tr>
+                    </table>
+                    </td>
+                    <td>EnbleSMS</td>
+                </tr>                 
+                <tr>
+                    <td class="title">用户名：</td>
+                    <td><input id="txtSMSName" name="SMSUserName" value="$Entity.SMSUserName" class="normalinput inputl_g" /></td>
+                    <td>SMSUserName</td>
+                </tr>       
+                <tr class="alter">
+                    <td class="title">密码：</td>
+                    <td><input id="txtSMSPWD" type="password" name="SMSUserPwd" value="$Entity.SMSUserPwd" class="normalinput inputl_g"/> 不修改请留空</td>
+                    <td>SMSUserPwd</td>
+                </tr>         
+                <tr>
+                    <td class="title">帐户信息：</td>
+                    <td colspan="2">${SMSAcountInfo}</td>
+                </tr>
+                <tr class="alter">
+                    <td class="title">短信延时：<br /><span>指打单与发送短信的时间差</span></td>
+                    <td><input id="txtSMSDelay" name="SMSDelay" style="width:120px;" value="$Entity.SMSDelay" class="normalinput inputl_g"/> 小时</td>
+                    <td>SMSDelay</td>
+                </tr>                                                 
+                <tr>
+                    <td class="title">发货短信：<br /><span>
+                     <font color="#B70808">变量说明：</font><br />${Si_No}：EC货单号<br />${Recipient}：收货人姓名<br />${DayNow}：当前时间</span>
+                    </td>
+                    <td><textarea id="txtMsgContent" name="SMSContent" rows="5" cols="20" style="height:120px;" class="normalinput inputl_g">$Entity.SMSContent</textarea></td>
+                    <td>SMSContent</td>
+                </tr>
+                </table>
+            <!--Contain_03 over-->
+            
+            <!--Contain_04 begin-->
+            <table cellpadding="0" cellspacing="1" class="DataDetail" id="contain_04" style="display:none;">
+                <tr>
+                    <th>参数说明</th>
+                    <th>参数值</th>
+                    <th width="150">变量名</th>
+                </tr>
+                <tr class="alter">
+                    <td class="title">邮件开关：</td>
+                    <td>
+                    <table id="EnableMailTb" border="0">
+	                    <tr>
+		                    <td><input id="MailRadio1" type="radio" name="EnableMail" value="true" #if($Entity.EnableMail) checked="checked"#end /><label for="rblEnableMail_0">开</label></td>
+                            <td><input id="MailRadio2" type="radio" name="EnableMail" value="false" #if(!$Entity.EnableMail) checked="checked"#end/><label for="rblEnableMail_1">关</label></td>
+	                    </tr>
+                    </table>
+                    </td>
+                    <td>EnableMail</td>
+                </tr>  
+                <tr class="alter">
+                    <td class="title">用户名：</td>
+                    <td><input id="MailAccount" type="text" name="MailAccount" value="$Entity.MailAccount" class="normalinput inputl_g" /></td>
+                    <td>MailAccount</td>
+                </tr>                 
+                <tr>
+                    <td class="title">密码：</td>
+                    <td><input id="MailPasswd" type="password" name="MailPasswd" value="$Entity.MailPasswd" class="normalinput inputl_g" />不修改请留空</td>
+                    <td>MailPasswd</td>
+                </tr>
+                <tr class="alter">
+                    <td class="title">显示名称：</td>
+                    <td><input id="DisplayName" type="text" name="DisplayName" value="$Entity.DisplayName" class="normalinput inputl_g" /></td>
+                    <td>DisplayName</td>
+                </tr>        
+                <tr class="alter">
+                    <td class="title">SMTP服务器地址：</td>
+                    <td><input id="SMTP" type="text" name="SmtpHost" value="$Entity.SmtpHost" class="normalinput inputl_g"/> </td>
+                    <td>SmtpHost</td>
+                </tr>
+                <tr class="alter">
+                    <td class="title">SMTP端口：</td>
+                    <td><input id="Port" type="text" name="Port" value="$Entity.Port" class="normalinput inputl_g"/> </td>
+                    <td>Port</td>
+                </tr>       
+                <tr>
+                    <td class="title">注册欢迎邮件</td>
+                    <td><textarea id="txtRegisterMsg" name="RegisterMsg" rows="5" cols="20" style="height:120px;" class="normalinput inputl_g">$Entity.RegisterMsg</textarea></td>
+                    <td>RegisterMsg</td>
+                </tr>
+                </table>
+            <!--Contain_04 end-->
+        </div> 
+
+        <div class="btnArea">
+            <input type="submit" id="btnSave" value="保存" class="ActionButton"/>
+        </div>
+      </div>
+	  <!--End : 表格列表-->
+	</div>
+    <script language="javascript" type="text/javascript" src="${HopeTag.InstallDir}Scripts/tab.js"></script>	
+    </form>
+</body>
+</html>

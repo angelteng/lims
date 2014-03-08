@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${HopeTag.SiteName}--用户查看</title>
+#parse("HeadPage.html")
+</head>
+<body>
+ <div id="wrap">
+
+    <!--Begin : 顶部导航-->
+    <div class="topNav">
+	#if($SavePermission)
+	 	<div class="r">
+	        <ul>
+		        <li><a href="${HopeTag.InstallDir}User/Modify/$Entity.ID"><img src="${HopeTag.InstallDir}Images/Icon/edit.png" align="absmiddle" width="14" height="14" /></a><a href="${HopeTag.InstallDir}User/Modify/$Entity.ID">&nbsp;编辑</a>
+		        </li>
+	        </ul>
+        </div>
+	#end
+        <div class="l">
+            <img src="${HopeTag.InstallDir}Images/Admin/tb.gif" align="absmiddle" width="16" height="16" alt="" />&nbsp;&nbsp;
+            <!--当前位置：文字--> <a href="${HopeTag.InstallDir}Home\Main">管理首页</a> >> <a href="${HopeTag.InstallDir}User">用户管理</a> >> 查看用户               
+        </div>
+	 </div>
+    <!--End : 顶部导航-->
+    
+    <!--Begin : 表格列表-->
+    <div class="m">
+      <div class="contentInfo">
+        <dl>
+            <dt></dt>
+            <dd>${Entity.ID}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.GroupID}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Account}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Password}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Name}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Gender}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Status}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Birthday.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.RegDate.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.PhoneNo}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.FaxNo}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.MobileNo}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Email}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.HomeSite}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Postcode}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Address}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.LoginTIme}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.LastLoginTime.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.Remark}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.CreateTime.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>${Entity.LastUpdateTime.ToString("yyyy-MM-dd HH:mm:ss")}</dd>
+        </dl>
+     </div>
+        
+     <div class="btnArea">
+        <input type="button" class="ActionButton" onclick="window.parent.history.back()" value="返回"/>
+     </div>   
+	
+     </div>
+    <!--End : 表格列表-->
+  </div>
+</body>
+</html>
+

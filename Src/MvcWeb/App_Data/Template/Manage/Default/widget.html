@@ -1,0 +1,27 @@
+﻿#macro(Widget $Field)
+#set($type = $Field.ComponentType)
+#set($code = $Field.Code)
+#if($type==1)
+<input type="file" name="$code" class="normalinput#if($Field.Required) required#end" value="${Field.DefaultValue}"/>
+#elseif($type==2)
+<select name="$code">
+#foreach($Option in $Field.ListItem)
+<option value="$Option.Key" #if(${Entity.Extend.ContainsKey($code)} && ${Entity.Extend.get_Item($code)}==$Option.Key)selected="selected"#end>$Option.Value</option>
+#end
+</select>
+#elseif($type==3)
+#foreach($Option in $Field.ListItem)
+<input type="checkbox" name="$code" value="$Option.Key" #if(${Entity.Extend.ContainsKey($code)} && $Option.Key==${Entity.Extend.get_Item($code)})checked="checked"#end/>$Option.Value
+#end
+#elseif($type==4)
+#foreach($Option in $Field.ListItem)
+<input type="radio" name="$code" value="$Option.Key" #if(${Entity.Extend.ContainsKey($code)} && $Option.Key==${Entity.Extend.get_Item($code)})checked="checked"#end/>$Option.Value
+#end
+#elseif($type==5)
+<textarea name="$code" class="#if($Field.Required)required#end">#if(${Entity.Extend.ContainsKey($code)})${Entity.Extend.get_Item($code)}#end</textarea>
+#elseif($type==6)
+<input type="text" name="$code" class="normalinput#if($Field.Required) required#end" value="#if(${Entity.Extend.ContainsKey($code)})${Entity.Extend.get_Item($code)}#end"/>
+#elseif($type==7)
+<input type="date" name="$code" class="normalinput#if($Field.Required) required#end" value="#if(${Entity.Extend.ContainsKey($code)})${Entity.Extend.get_Item($code)}#end"/>
+#end
+#end
